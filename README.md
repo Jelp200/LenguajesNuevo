@@ -7,6 +7,7 @@ El siguiente repositorio es una compilación de los lenguajes de programación a
 ###### <b><i>Nota 1.</i></b> No todos los lenguajes de programación tienen el mismo enfasis y desgloce, ya que en la carrera se utilizaron más unos lenguajes que otros.
 
 ### :green_circle: <a href="01 - Lenguaje C/Inicio.md">C</a> [ :croissant: ]
+### :green_circle: <a href="02 - Desarrollo web/Inicio.md">Desarrollo Web</a> [ :spider_web: ]
 
 ###### <b><i>Nota 2.</i></b> Verde = Completamente dominado ; Amarillo = Parcialmente dominado ; Rojo = Superficial
 
