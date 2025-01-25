@@ -8,6 +8,7 @@ El siguiente repositorio es una compilación de los lenguajes de programación a
 
 ### :green_circle: <a href="01 - Lenguaje C/Inicio.md">C</a> [ :croissant: ]
 ### :green_circle: <a href="02 - Desarrollo web/Inicio.md">Desarrollo Web</a> [ :spider_web: ]
+### :green_circle: <a href="03 - Python/Inicio.md">Python</a> [ :snake: ]
 
 ###### <b><i>Nota 2.</i></b> Verde = Completamente dominado ; Amarillo = Parcialmente dominado ; Rojo = Superficial
 
