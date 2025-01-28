@@ -4,22 +4,7 @@ Una vez que se ha dominado los conceptos básicos de la programación en C, es d
 
 <ul>
     <li><a href="01 - ManejoMemoria/00 - ManejoMemoria.md">Manejo de memoria.</a></li>
-    <li><a href=""></a></li>
-    <li><a href=""></a></li>
-    <li><a href=""></a></li>
-    <li><a href=""></a></li>
-    <li><a href=""></a></li>
-    <li><a href=""></a></li>
-    <li><a href=""></a></li>
-    <li><a href=""></a></li>
-    <li><a href=""></a></li>
-    <li><a href=""></a></li>
-    <li><a href=""></a></li>
-    <li><a href=""></a></li>
-    <li><a href=""></a></li>
-    <li><a href=""></a></li>
-    <li><a href=""></a></li>
-    <li><a href=""></a></li>
+    <li><a href="02 - Apuntadores (Avanzado)/00 - ApuntadoresAvanzados.md">Apuntadores (Avanzado)</a></li>
     <li><a href=""></a></li>
     
 </ul>
