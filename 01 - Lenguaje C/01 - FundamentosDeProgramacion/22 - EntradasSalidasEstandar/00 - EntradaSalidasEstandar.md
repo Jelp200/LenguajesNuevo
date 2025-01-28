@@ -1,7 +1,7 @@
 # ENTRADAS Y SALIDAS ESTÁNDAR EN C :infinity:
 ### Introducción.
 Cuando se programa en C se cree que las entradas y salidas son algo que vienen implícito en dicho lenguaje, pero esto no es así. Sin embargo, los programas interactúan con su medio ambiente en formas mucho más complicadas.
-La biblioteca `stdio.h` consiste en un modelo simple de entrada y salida de texto. Un flujo de texto consiste en una secuencia de líneas, el cual cada una termina con un carácter de nueva línea (\n). Si el sistema operativo (SO) no opera de este modo, la biblioteca hace lo pertinente para simular que así funciona.
+La biblioteca `stdio.h` consiste en un modelo simple de entrada y salida de texto. Un flujo de texto consiste en una secuencia de líneas, el cual cada una termina con un carácter de nueva línea `\n`. Si el sistema operativo (SO) no opera de este modo, la biblioteca hace lo pertinente para simular que así funciona.
 El mecanismo de entrada más simple es leer un carácter a la vez de la entrada estándar, normalmente el teclado, son:
 
 ```C
@@ -13,7 +13,7 @@ Algunas veces un archivo puede tomar el lugar del teclado empleando la conversi�
 ```C
 programa < archivo_entrada;
 ```
-Esto provoca que el programa lea caracteres del archivo. El cambio de la entrada se realiza de manera en la cual el programa mismo es ajeno al cambio; en particular; la cadena `< archivo_entrada` no está incluida entre los argumentos de la línea de órdenes `argv`. El cambio de la entrada es también invisible si la entrada viene de otro programa vía un mecanismo de interconexión (pipe): en algunos sistemas, la línea de órdenes ejecuta tanto el programa <b><i>"otro_progama"</i></b> como a <b><i>"programa"</i></b>, e interconecta a la salida estándar de `otro_progama` con la entrada estándar para `programa`.
+Esto provoca que el programa lea caracteres del archivo. El cambio de la entrada se realiza de manera en la cual el programa mismo es ajeno al cambio; en particular; la cadena `< archivo_entrada` no está incluida entre los argumentos de la línea de órdenes `argv`. El cambio de la entrada es también invisible si la entrada viene de otro programa vía un mecanismo de interconexión (pipe): en algunos sistemas, la línea de órdenes ejecuta tanto el programa `otro_progama` como a `programa`, e interconecta a la salida estándar de `otro_progama` con la entrada estándar para `programa`.
 Ahora bien, la siguiente función:
 
 ```C
@@ -27,7 +27,7 @@ programa < archivo_salida;
 La salida producida por `printf` también encuentra su camino hacia la salida estándar. Las llamadas a `putchar` y `printf` suelen estar traslapadas.
 Es importante decir que cada archivo fuente que se refiera a una función de biblioteca de E/S debe contener la directiva de preprocesador `stdio.h`.
 Antes de la primera referencia. Cuando un nombre está delimitado por`<` y `>` se realiza una búsqueda del `header` en algunos lugares estándar, regularmente en los sistemas UNIX es el directorio `/usr/include`.
-Varios programas leen solo el flujo de entrada y escriben solo el de salida; para dichos programas la entrada y salida con `getchar`, `putchar` y `printf`, pueden ser totalmente adecuada y en realidad es suficiente en un comienzo. Esto es totalmente cierto si se emplea la redirección para conectar la salida de un programa a la entrada de otro. Ejemplo, considere un <a = href="">programa que permite convertir su entrada en minúsculas</a>:
+Varios programas leen solo el flujo de entrada y escriben solo el de salida; para dichos programas la entrada y salida con `getchar`, `putchar` y `printf`, pueden ser totalmente adecuada y en realidad es suficiente en un comienzo. Esto es totalmente cierto si se emplea la redirección para conectar la salida de un programa a la entrada de otro. Ejemplo, considere un programa que permite convertir su entrada en minúsculas:
 
 ```C
 // DIRECTIVAS DE PREPROCESADOR
@@ -51,11 +51,11 @@ La función `printf` traduce los valores internos a caracteres. Con anterioridad
 int printf(char *format, arg_1, arg_2, …);
 ```
 `printf` convierte, da formato e imprime sus argumentos en la salida estándar bajo el control de `format`. Regresa el número de caracteres impresos. Dicha cadena de formato permite contener dos tipos de objetos: caracteres ordinarios (son copiados al flujo de salida), y especificaciones de conversión (cada uno de los cuales causa la conversión e impresión de los siguientes argumentos sucesivos a la función). Cada especificación de conversión comienza con `%` y termina con un carácter de conversión. Entre `%` y el carácter de conversión pueden estar:
-- Un signo menos (-), especifica el ajuste a la izquierda del argumento convertido.
+- Un signo menos `-`, especifica el ajuste a la izquierda del argumento convertido.
 - Un número especifica el ancho mínimo del campo. El argumento convertido será impreso dentro de un campo de al menos este ancho y si es necesario se llenará con espacios en blanco a la izquierda o derecha para completar la amplitud del campo.
-- Un punto (.), que separa el ancho de campo de la precisión.
+- Un punto `.`, que separa el ancho de campo de la precisión.
 - Un número, la precisión, que especifica el número máximo de caracteres de una cadena que serán impresos, o el número de dígitos después del punto decimal de un valor de punto flotante, o el número mínimo de dígitos para un entero.
-- Una “h” si el entero será impreso como un “short”, o una “l” si será como un "long”.
+- Una `h` si el entero será impreso como un `short`, o una `l` si será como un `long`.
 A continuación, la siguiente tabla presenta las conversiones básicas de la función `printf`.
 
 | **Carácter** | **Tipo de argumento: impreso como**                                                                          |
