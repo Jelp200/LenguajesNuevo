@@ -112,7 +112,7 @@ A diferencia del `if` común, `#IF - #ENDIF` es una directiva de preprocesador l
     // Proceso a realizar si la expresión es verdadera
 #endif
 ```
-De igual manera que en las estructuras condicionales, `#if - #endif"</i></b>` puede integrar `else` utilizando la directiva `#else`, esto puede verse de la siguiente manera:
+De igual manera que en las estructuras condicionales, `#if - #endif` puede integrar `else` utilizando la directiva `#else`, esto puede verse de la siguiente manera:
 ```C
 #if expresión
     // Proceso a realizar si la expresión es verdadera
