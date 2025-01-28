@@ -196,7 +196,7 @@ Dos apuntadores de tipo entero, digamos ptr1(address:1000) y ptr2(address:1004) 
 - Aritmetica de apuntadores en Arreglos. Los punteros contienen direcciones. Sumar dos direcciones no tiene sentido porque no se sabe a qué apuntarían. Restar dos direcciones permite calcular el desplazamiento entre las dos direcciones. Un nombre de arreglo actúa como una constante de puntero. El valor de esta constante de puntero es la dirección del primer elemento.
 
 ### <a href="">Comparativa de Apuntadores.</a>
-Es posible comparar dos apuntadores utilizando los operadores de asignación (>, <, >=, <=, == y !=). Esto retorna verdadero si la condición es valida, sino, retorna falso. Los pasos, para poder realizar la comparativa entre apuntadores son:
+Es posible comparar dos apuntadores utilizando los operadores de asignación `>, <, >=, <=, == y !=`. Esto retorna verdadero si la condición es valida, sino, retorna falso. Los pasos, para poder realizar la comparativa entre apuntadores son:
 
 1. Inicializar los valores enteros y asignarles un apuntador.
 2. Checar la condición utilizando la comparativa.
