@@ -40,13 +40,13 @@ Ahora bien, para poder declarar una variable tipo apuntador lo que se hace es lo
 ```C
 tipoDato *nombreVarApuntador;
 ```
-Es posible observar que un apuntador se declara tal cual, como una variable normal, con la púnica diferencia que se debe poner un "*" (asterisco) entre el tipo de dato y el nombre de la variable del apuntador o puntero, entonces, si se desea declarar varias variables del mismo tipo puntero en la misma declaración lo que se hace es lo siguiente:
+Es posible observar que un apuntador se declara tal cual, como una variable normal, con la púnica diferencia que se debe poner un `*` (asterisco) entre el tipo de dato y el nombre de la variable del apuntador o puntero, entonces, si se desea declarar varias variables del mismo tipo puntero en la misma declaración lo que se hace es lo siguiente:
 ```C
 int *pVarInt1, *pVarInt2;
 float *pVarFloat1, *pVarFloat2;
 char *pCharVar1, *pCharVar2;
 ```
-Se ha visto el como declarar las variables tipo puntero o apuntador, pero ¿Cómo es posible guardar el valor en la dirección de memoria? Para poder guardar el valor de una variable en la dirección de memoria lo que se hace es utilizar un operador con el que se trabaja siempre, el operador <b><i>"&"</i></b> o <b><i>ampersand</i></b> permite obtener la dirección de memoria de una variable, por ello también es llamado <b><i>operador de dirección</i></b>. Ahora es cuando tiene sentido que al momento de utilizar la función de entrada "scanf" es necesario incorporar en lo parámetros de la función el operador de dirección seguido del nombre de la variable donde se desea ingresar el valor, ya que se hace alusión a que en dicha dirección de memoria se ingresa el valor deseado.
+Se ha visto el como declarar las variables tipo puntero o apuntador, pero ¿Cómo es posible guardar el valor en la dirección de memoria? Para poder guardar el valor de una variable en la dirección de memoria lo que se hace es utilizar un operador con el que se trabaja siempre, el operador `&` o <b><i>ampersand</i></b> permite obtener la dirección de memoria de una variable, por ello también es llamado <b><i>operador de dirección</i></b>. Ahora es cuando tiene sentido que al momento de utilizar la función de entrada "scanf" es necesario incorporar en lo parámetros de la función el operador de dirección seguido del nombre de la variable donde se desea ingresar el valor, ya que se hace alusión a que en dicha dirección de memoria se ingresa el valor deseado.
 ```C
 scanf("%tipoDato", &Variable);
 ```
@@ -66,8 +66,8 @@ int main(){
     return 0;
 }
 ```
-Se puede observar que no es necesario utilizar nuevamente el operador "*" al momento de asignar la dirección de memoria a la variable apuntador.
-Un punto importante que destacar es que <b><i>el apuntador si o si debe inicializarse ya sea en una dirección de memoria, en 0 o NULL</i></b>.
+Se puede observar que no es necesario utilizar nuevamente el operador `*` al momento de asignar la dirección de memoria a la variable apuntador.
+Un punto importante que destacar es que <b><i>el apuntador si o si debe inicializarse ya sea en una dirección de memoria, en 0 o</i></b> `NULL`.
 Para poder visualizar el valor almacenado en la dirección de memoria de la variable apuntador lo que se haces es simplemente imprimir los datos.
 ```C
 printf("Dato variable: %i: ", variable);
@@ -76,7 +76,7 @@ printf("\nDato variable apuntador: %i: ", *p_variable);
 printf("\nPosicion variable: %p: ", &variable);
 printf("\nPosicion variable puntero: %i: ", & p_variable);
 ```
-Se puede observar que al momento de visualizar los datos de la variable apuntador, el primer "printf" utiliza " * " debido a que se desea mostrar el valor dentro de la dirección de memoria, mientras que el segundo "printf" no se tiene el "*" ya que se desea únicamente la dirección de memoria y esta variable ya ha sido igualada con dicha dirección de memoria.
+Se puede observar que al momento de visualizar los datos de la variable apuntador, el primer `printf` utiliza `*` debido a que se desea mostrar el valor dentro de la dirección de memoria, mientras que el segundo `printf` no se tiene el `*` ya que se desea únicamente la dirección de memoria y esta variable ya ha sido igualada con dicha dirección de memoria.
 
 ### <a href="19 - 03 - pasoDeParametrosPorValor.c">Paso de parámetros por valor.</a>
 El paso de parámetros por valor es el más utilizado en la programación en C, esto debido a que es utilizado cuando se desea ingresar datos a un programa. Dicho <b><i>paso de parámetros lo que hace es enviar una copia del valor de la variable original a la función la cual esta llamando a la variable</i></b>. Esto quiere decir que cualquier modificación realizada al parámetro dentro de la función no afectara a la variable global.
@@ -102,7 +102,7 @@ int duplicaPorValor(int x){
     int x *= 2;
 }
 ```
-Lo que sucede en el programa anterior es que copia el valor original y se pasa a la función, por lo que no se modifica el valor que se ha dado, el valor que si se modifica es el de la variable dentro de la función, ósea, la variable "x".
+Lo que sucede en el programa anterior es que copia el valor original y se pasa a la función, por lo que no se modifica el valor que se ha dado, el valor que si se modifica es el de la variable dentro de la función, ósea, la variable `x`.
 
 ### <a href="19 - 04 - pasoDeParametrosPorReferencia.c">Paso de parámetros por referencia.</a>
 El paso de parámetros por referencia a comparación del paso de parámetros por valor <b><i>permite modificar el valor de la variable gracias a los apuntadores</i></b>. Esto se refiere que, al momento de pasar un puntero a la función, dicha función puede modificar directamente el contenido de la memoria referenciada por ese puntero, afectando así la variable original.

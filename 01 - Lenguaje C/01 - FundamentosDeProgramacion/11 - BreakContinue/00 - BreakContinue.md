@@ -1,5 +1,5 @@
 # BREAK Y CONTINUE :croissant:
-<b><i>"Break"</i></b> y <b><i>"Continue"</i></b> actúan como sentencias de control dentro del código, ya que estas dos sentencias permiten tanto terminar/romper o continuar una secuencia de comandos dentro del código.
+`break` y `continue` actúan como sentencias de control dentro del código, ya que estas dos sentencias permiten tanto terminar/romper o continuar una secuencia de comandos dentro del código.
 
 ### Break.
 Terminan una iteración (repetición) dada por el programa y de igual manera rompe el ciclo completo dentro del programa o sección de código en cuestión (termina el programa).

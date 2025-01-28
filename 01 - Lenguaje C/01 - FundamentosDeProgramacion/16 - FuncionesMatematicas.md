@@ -1,5 +1,5 @@
 # FUNCIONES MATEMATICAS :man_teacher:
-Las funciones matemáticas dentro del lenguaje C permiten realizar cálculos "complejos", por ello es importante incluir la librería <b><i>"math.h"</i></b> de la siguiente manera:
+Las funciones matemáticas dentro del lenguaje C permiten realizar cálculos "complejos", por ello es importante incluir la librería `math.h` de la siguiente manera:
 ```C
 // DIRECTIVAS DE PREPROCESADOR
 #include <stdio.h>

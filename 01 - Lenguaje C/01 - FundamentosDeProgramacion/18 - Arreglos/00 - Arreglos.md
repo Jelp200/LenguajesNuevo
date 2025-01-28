@@ -79,17 +79,18 @@ tipoAlmacenamiento tipoDato Nombre[exp1] [exp2];
 Se ha observado que un arreglo unidimensional de "n" elementos puede ser visto como una lista de valores, análogamente, un arreglo bidimensional de (m x n) puede ser visto como una tabla de valores que tienen "m" filas por "n" columnas, tal como una matriz.
 
 $$
-    A = \begin{pmatrix}
-    a_{11} & \cdots & a_{1n} \\
-    \vdots & \ddots & \vdots \\
-    a_{m1} & \cdots & a_{mn}
-    \end{pmatrix}
+  A = \begin{pmatrix}
+  a_{11} & \cdots & a_{1n} \\
+  \vdots & \ddots & \vdots \\
+  a_{m1} & \cdots & a_{mn}
+  \end{pmatrix}
 $$
 
 Entendida esta idea, un arreglo multidimensional puede verse como un conjunto de tablas de “m x n” valores.
 En el lenguaje de programación C es posible ver un arreglo bidimensional de la siguiente manera:
 
 Y en forma de memoria podra verse como:
+
 ```txt
               COLUMNA 1   COLUMNA 2   COLUMNA 3              COL (n-1)    Col "n"
             ┌───────────┬───────────┬───────────┬──────────┬───────────┬───────────┐
@@ -108,38 +109,40 @@ FILA "m"    │           │           │           │   ...    │          
               x[m-1][0]   x[m-1][1]   x[m-1][2]     ...     x[m-1][n-2]  x[m-1][n-1]
 ```
 
-Siendo así “x” un arreglo bidimensional (m x n).
+Siendo así `x` un arreglo bidimensional (m x n).
 Entonces, un arreglo bidimensional se declara de la siguiente manera:
+
 ```C
 // ARREGLO 2D
 tipoDato Nombre[nFil] [nCol] = {{datosFil}, {datosCol}};
 ```
 
 ### <a href="18 - 03 - arregloMultidimensional.c">Arreglos multidimensionales.</a>
-Los arreglos multidimensionales pueden ser vistos como un conjunto de tablas de datos, estos arreglos se definen de la misma manera que los arreglos unidimensionales y bidimensionales, con la única diferencia que ya no solo se tendrán uno o dos corchetes, sino, “n” corchetes y sus valores, estos arreglos se declaran de la siguiente manera:
+Los arreglos multidimensionales pueden ser vistos como un conjunto de tablas de datos, estos arreglos se definen de la misma manera que los arreglos unidimensionales y bidimensionales, con la única diferencia que ya no solo se tendrán uno o dos corchetes, sino, `n` corchetes y sus valores, estos arreglos se declaran de la siguiente manera:
+
 ```C
 // ARREGLO MULTIDIMENSIONAL
 tipoAlmacenamiento tipoDato Nombre[exp1] [exp2], …, [expN];
 ```
 
 $$
-    A = \begin{pmatrix}
-    a_{11} & \cdots & a_{1n} \\
-    \vdots & \ddots & \vdots \\
-    a_{m1} & \cdots & a_{mn}
-    \end{pmatrix}
+  A = \begin{pmatrix}
+  a_{11} & \cdots & a_{1n} \\
+  \vdots & \ddots & \vdots \\
+  a_{m1} & \cdots & a_{mn}
+  \end{pmatrix}
 
-    B = \begin{pmatrix}
-    b_{11} & \cdots & b_{1n} \\
-    \vdots & \ddots & \vdots \\
-    b_{m1} & \cdots & b_{mn}
-    \end{pmatrix}
+  B = \begin{pmatrix}
+  b_{11} & \cdots & b_{1n} \\
+  \vdots & \ddots & \vdots \\
+  b_{m1} & \cdots & b_{mn}
+  \end{pmatrix}
 
-    X = \begin{pmatrix}
-    x_{11} & \cdots & x_{1n} \\
-    \vdots & \ddots & \vdots \\
-    x_{m1} & \cdots & x_{mn}
-    \end{pmatrix}
+  X = \begin{pmatrix}
+  x_{11} & \cdots & x_{1n} \\
+  \vdots & \ddots & \vdots \\
+  x_{m1} & \cdots & x_{mn}
+  \end{pmatrix}
 $$
 
 Para comprender de mejor manera dicho concepto, dígase que se tiene el siguiente arreglo:

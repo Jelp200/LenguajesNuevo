@@ -40,14 +40,14 @@ struct nombreDeLaEstructura{
     tipoDatoMiembro_n miembro_1, ..., miembro_n;
 }varStruct = {valorMiembro_1, ..., valorMiembro_n};
 ```
-Una vez que se ha declarado la estructura es posible acceder a los miembros de dicha estructura mediante el operador punto ("."), o bien, el operador puntero ("->").
+Una vez que se ha declarado la estructura es posible acceder a los miembros de dicha estructura mediante el operador punto `.`, o bien, el operador puntero `->`.
 
 <ul>
-<li>Operador "."</li>. Proporciona un acceso directo a los miembros de la estructura, su sintaxis es:
+<li>Operador `.`</li>. Proporciona un acceso directo a los miembros de la estructura, su sintaxis es:
 ```C
 varStruct_n.miembro_n = Dato;
 ```
-<li>Operador "->"</li>. Permite acceder a los datos de la estructura a partir de un puntero, su sintaxis es:
+<li>Operador `->`</li>. Permite acceder a los datos de la estructura a partir de un puntero, su sintaxis es:
 
 ```C
 varStruct_n -> miembro_n = Dato;
@@ -68,7 +68,7 @@ struct nombreDeLaEstructura_2{
 ```
 
 #### <a href="20 - 03 - estructurasFunciones.c">Estructuras y funciones.</a>
-Como se ha dicho con anterioridad, las únicas operaciones que se pueden hacer con las estructuras son las de copiar y asignar como unidad, tomar su dirección de memoria con "&", y tener acceso a sus miembros.
+Como se ha dicho con anterioridad, las únicas operaciones que se pueden hacer con las estructuras son las de copiar y asignar como unidad, tomar su dirección de memoria con `&`, y tener acceso a sus miembros.
 El poder copiar y asignar estas estructuras incluye pasarlas como argumentos a funciones y también regresar valores de funciones. Esto va de la mano con el paso de valor por parámetro o por referencia debido a que solo pueden ser pasadas de esa manera, existiendo así las mismas diferencias que con los tipos de datos simples. Entonces, si se desea <b><i>pasar una estructura completa como parámetro</i></b> se tiene el siguiente ejemplo:
 ```C
 struct datosPersonales{
@@ -95,7 +95,7 @@ Mientras que para <b><i>pasar una estructura por referencia en una función</i><
 void escribirINE(struct datosPersonales *INE);
 ```
 Una vez que se ha decidido si se pasara la estructura por valor o por referencia a la función, es pertinente que se desee acceder a sus miembros.
-Dígase que se desea acceder al miembro "nombre" de la estructura "datosPersonales", dicho acceso será por valor, entonces, se tiene lo siguiente:
+Dígase que se desea acceder al miembro `nombre` de la estructura `datosPersonales`, dicho acceso será por valor, entonces, se tiene lo siguiente:
 ```C
 printf("%s", INE.nombre);
 ```
@@ -119,7 +119,7 @@ Y en su declaración:
 ```C
 void escribirINE(*numero);
 ```
-Y se debe recordar que cuando se desea cambiar el valor de una variable la cual pasa por referencia siempre se utiliza el "*" para realizar el cambio, por ejemplo:
+Y se debe recordar que cuando se desea cambiar el valor de una variable la cual pasa por referencia siempre se utiliza el `*` para realizar el cambio, por ejemplo:
 ```C
 void escribirINE(*numero){
     *numero = 2020301790;
@@ -127,7 +127,7 @@ void escribirINE(*numero){
 ```
 
 ### <a href="20 - 04 - Uniones.c">Uniones.</a>
-Las uniones son muy similares a las estructuras, la única diferencia es la semántica ya que al momento de declarar una unión se utiliza la palabra reservada "union" en vez de "struct".
+Las uniones son muy similares a las estructuras, la única diferencia es la semántica ya que al momento de declarar una unión se utiliza la palabra reservada `union` en vez de `struct`.
 ```C
 union nombreDeLaUnion{
     tipoDatoMiembro miembro_1, …, miembro_n;

@@ -1,5 +1,5 @@
 # ARCHIVOS Y MANEJO DE DATOS :card_file_box:
-El manejo de archiuvos en C es un proceso que permite crear, abrir, leer, escribir y cerrar operaciones en un archivo. Para ello, C provee de funciones tales cómo <b><i>fopen(), fwrite(), fread(), fseek(), fprintf()</i></b>, etc. Pero ¿Por qué es necesario manejar archivos en C? Hasta ahora, las operaciones que se realizan con el programa C se realizan en un indicador o terminal que no se almacena en ningún lugar. La salida se elimina cuando se cierra el programa. Pero en la industria del software, la mayoría de los programas se escriben para almacenar la información obtenida del programa. El uso del manejo de archivos es exactamente lo que la situación requiere.
+El manejo de archiuvos en C es un proceso que permite crear, abrir, leer, escribir y cerrar operaciones en un archivo. Para ello, C provee de funciones tales cómo `fopen(), fwrite(), fread(), fseek(), fprintf()`, etc. Pero ¿Por qué es necesario manejar archivos en C? Hasta ahora, las operaciones que se realizan con el programa C se realizan en un indicador o terminal que no se almacena en ningún lugar. La salida se elimina cuando se cierra el programa. Pero en la industria del software, la mayoría de los programas se escriben para almacenar la información obtenida del programa. El uso del manejo de archivos es exactamente lo que la situación requiere.
 
 Para entender por qué es importante el manejo de archivos, veamos algunas características del uso de archivos:
 
@@ -16,7 +16,7 @@ Un archivo de texto contiene datos en forma ASCII, por lo general es utilizado p
 
 - Cada linea de texto en un archivo termina con una nueva línea de caracter `\n`.
 - Puede leerse o escribirse por cualquier editor de texto.
-- Generalmente se almacena con una extención ".txt".
+- Generalmente se almacena con una extención `.txt`.
 - Los archivos de texto pueden ser utilizados para almacenar los códigos fuente.
 
 #### Archivos Binarios.
@@ -24,19 +24,19 @@ Un archivo de texto contiene datos en forma binaria, por lo general es utilizado
 
 - Los archivos binarios solo se pueden crear desde un programa y su contenido solo puede ser leído por un programa.
 - Son más seguros porque no son fáciles de leer.
-- Generalmente se almacenan con la extensión de archivo ".bin".
+- Generalmente se almacenan con la extensión de archivo `.bin`.
 
 <div><img src="../../../imgs/01 - Lenguaje C/02 - ProgramacionIntermedia/02 - Apuntadores (Avanzado)/TAC.png"></div>
 
 #### Operaciones con Archivos.
 Las operaciones con archivos se refieren a las diferentes formas en las cuales un archivo en C puede ser manejad, tales cómo:
 
-- Crear un nuevo archivo. <b><i>fopen()</i></b> con atributos <b><i>"a", "a+", "w" o "w+"</i></b>.
-- Abrir un archivo existente. <b><i>fopen()</i></b>.
-- Leer un archivo. <b><i>fscanf() o fgets()</i></b>.
-- Escribir un archivo. <b><i>frpintf() o fputs()</i></b>.
-- Mover a un lugar especifico de un archivo. <b><i>fseek(), frewind()</i></b>.
-- Cerrar un archivo. <b><i>fclose()</i></b>.
+- Crear un nuevo archivo. `fopen()` con atributos `"a", "a+", "w" o "w+"`.
+- Abrir un archivo existente. `fopen()`.
+- Leer un archivo. `fscanf() o fgets()`.
+- Escribir un archivo. `frpintf() o fputs()`.
+- Mover a un lugar especifico de un archivo. `fseek(), frewind()`.
+- Cerrar un archivo. `fclose()`.
 
 #### Funciones para las operaciones con Archivos.
 
@@ -69,10 +69,10 @@ Siendo sus parametros:
 Y sus valores de retorno:
 
 - Si el archivo tiene una apertura correcta, retorna un apuntador de archivo a el.
-- Si el archivo no tiene una apertura correcta, retorna un valor NULL.
+- Si el archivo no tiene una apertura correcta, retorna un valor `NULL`.
 
 #### Modos de Apertura de Archivos.
-Los modos de apertura permiten especificar los tipos de operaciones las cuales se realizarán en el archivo abierto. Son pasados como argumentos a la función <b><i>fopen()</i></b>. Algunos modos de apertura o acceso son:
+Los modos de apertura permiten especificar los tipos de operaciones las cuales se realizarán en el archivo abierto. Son pasados como argumentos a la función `fopen()`. Algunos modos de apertura o acceso son:
 
 | Modos de Apertura | Descripción |
 |---|---|

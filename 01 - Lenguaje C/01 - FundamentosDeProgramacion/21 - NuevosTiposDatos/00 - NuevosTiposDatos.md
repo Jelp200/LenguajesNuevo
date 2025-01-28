@@ -3,12 +3,12 @@
 Cuando cse comienza a trabajar de una manera más profesional con C es posible que se necesite crear tipos de datos que el programador rquiera, para ello se tiene:
 
 ### <a href="21 - 01 - Typedef.c">Tipos de datos definidos.</a>
-Los tipos de datos definidos por el usuario <b><i>"typedef"</i></b> permiten crear sinónimos de tipos de datos previamente ya definidos, su sintaxis está dada por:
+Los tipos de datos definidos por el usuario `typedef` permiten crear sinónimos de tipos de datos previamente ya definidos, su sintaxis está dada por:
 
 ```C
 typedef tipoDato nuevoTipoDeDato;
 ```
-Por ejemplo, si en vez de utilizar la palabra reservada "int" para saber que es un tipo de dato entero, se puede hacer lo siguiente:
+Por ejemplo, si en vez de utilizar la palabra reservada `int` para saber que es un tipo de dato entero, se puede hacer lo siguiente:
 ```C
 typedef int entero;
 ```

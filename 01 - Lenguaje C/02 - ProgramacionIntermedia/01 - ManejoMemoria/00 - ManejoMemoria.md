@@ -7,7 +7,7 @@ La asignación de memoria puede dividirse en tres categorias principales:
 
 - <b><i>Memoría Estática</i></b>: Asignada en tiempo de compilación, consta de variables globales y estáticas que se almacenan en una región fija del programa llamada segmento de datos.
 - <b><i>Memoría Automática (Pila o Stack)</i></b>: Utilizada para variables locales. La memoria es asignada automáticamente cuando se declara la variable y se libera al salir de la función.
-- <b><i>Memoría Dinámica</i></b>: Asignada en tiempo de ejecución utilizando funciones como <b><i>malloc()</b></i>, <b><i>calloc()</b></i> y <b><i>realloc()</b></i>. Esta memoria debe liberarse manualmente con la función <b><i>free()</b></i>.
+- <b><i>Memoría Dinámica</i></b>: Asignada en tiempo de ejecución utilizando funciones como `malloc()`, `calloc()` y `realloc()`. Esta memoria debe liberarse manualmente con la función `free()`.
 
 Por lo tanto, los elementos importantes para la asignación de memoria son:
 
@@ -22,7 +22,7 @@ Por lo tanto, los elementos importantes para la asignación de memoria son:
 ###### <b><i>Nota.</i></b> C99 en adelante contiene la función aligned_alloc(). Otros sistemas proveen alloca().
 
 ### <a href="../01 - ManejoMemoria/01 - 01 - malloc.c">Asignación Estandar "malloc()".</a>
-En C, la asignación dinámica de memoria esta definida en la librería o directiva de preprocesador <b><i>stdlib.h</i></b>, es necesario comprender que para trabajar ya sea con esta función o cualquier otra para la asignación dinámica de memoria, se utilizarán los punteros, entonces, el formato de <b><i>malloc()</b></i> es el siguiente:
+En C, la asignación dinámica de memoria esta definida en la librería o directiva de preprocesador `stdlib.h`, es necesario comprender que para trabajar ya sea con esta función o cualquier otra para la asignación dinámica de memoria, se utilizarán los punteros, entonces, el formato de `malloc()` es el siguiente:
 
 ```C
 void* malloc(size_t tamaño);                    // Reserva un bloque de memoria de tamaño especificado.
@@ -55,7 +55,7 @@ int main() {
 ```
 
 ### <a href="../01 - ManejoMemoria/01 - 02 - calloc.c">Memoria Puesta a 0 "calloc()".</a>
-La memoria retornada por <b><i>malloc()</b></i> puede no estar inicializada en un valor qwue sea razonable, y debe ser puesta a 0 con mucho cuidado con <b><i>memset()</b></i> o copiar un valor adecuado en ella. Por otro lado, <b><i>malloc()</b></i> retorna un bloque del valor deseado con todos los bits inicializados en 0. Esto no necesariamente es la misma representación de un puntero flotante en cero, o un puntero nulo constante. El formato de <b><i>malloc()</b></i> es el siguiente:
+La memoria retornada por `malloc()` puede no estar inicializada en un valor qwue sea razonable, y debe ser puesta a 0 con mucho cuidado con `memset()` o copiar un valor adecuado en ella. Por otro lado, `malloc()` retorna un bloque del valor deseado con todos los bits inicializados en 0. Esto no necesariamente es la misma representación de un puntero flotante en cero, o un puntero nulo constante. El formato de `malloc()` es el siguiente:
 
 ```C
 void* calloc(size_t número, size_t tamaño);    // Reserva memoria para múltiples elementos y la inicializa a cero.
@@ -86,7 +86,7 @@ int main() {
 ```
 
 ### <a href="../01 - ManejoMemoria/01 - 03 - aligned_malloc.c">Memoería Alineada "aligned_malloc()".</a>
-La memoria alineada <b><i>aligned_malloc()</b></i> asigna el tamaño en bytes del almacenamiento no inicializado cuya especificación se especifica mediante el alineamiento. El parámetro ingresado debe ser un múltiplo entero del alineamiento. Un punto a favor de la memoria alineada es que es segura para hilos, es decir, se comporta cómo si sólo accediera a las posiciones de memoria visibles a través de su argumento,y no a cualquier almacenamiento o espacio estático. El formato de <b><i>aligned_malloc()</b></i> es el siguiente:
+La memoria alineada `aligned_malloc()` asigna el tamaño en bytes del almacenamiento no inicializado cuya especificación se especifica mediante el alineamiento. El parámetro ingresado debe ser un múltiplo entero del alineamiento. Un punto a favor de la memoria alineada es que es segura para hilos, es decir, se comporta cómo si sólo accediera a las posiciones de memoria visibles a través de su argumento,y no a cualquier almacenamiento o espacio estático. El formato de `aligned_malloc()` es el siguiente:
 
 ```C
 void* aligned_calloc(size_t alineamiento, size_t tamaño);  // Reserva memoria para alinear en ciertos limites.
@@ -112,7 +112,7 @@ int main() {
 ```
 
 ### <a href="../01 - ManejoMemoria/01 - 04 - free.c">Memoría Libre "free()".</a>
-Es posible observa, que cada vez que se asigna memoria ya sea con <b><i>malloc()</b></i>, <b><i>calloc()</b></i> o <b><i>realloc()</b></i>, se necesita liberar ese espacio el cuál fue asignado, por lo cual se usa la función <b><i>free()</b></i>, esto se hace con la finalidad de que el sistema pueda reutilizar dicha memoria. Su definición está dada por:
+Es posible observa, que cada vez que se asigna memoria ya sea con `malloc()`, `calloc()` o `realloc()`, se necesita liberar ese espacio el cuál fue asignado, por lo cual se usa la función `free()`, esto se hace con la finalidad de que el sistema pueda reutilizar dicha memoria. Su definición está dada por:
 
 ```C
 void free(void* ptr);  // Libera un bloque de memoria previamente asignado.
@@ -140,7 +140,7 @@ int main() {
 ```
 
 ### <a href="../01 - ManejoMemoria/01 - 05 - realloc.c">Reasignación de Memoría "realloc()".</a>
-Si se necesita expandir el puntero previamente asignado en la memoria. <b><i>realloc()</b></i> permite desasignar el viejo objeto al ptr, y retorna un puntero al objeto el cual tiene el tamaño especifico. Este ptr es un puntero en la memoria que previamente fue asignado con la misma <b><i>realloc()</b></i>, <b><i>calloc()</b></i> o <b><i>malloc()</b></i>, esto con el fin de ser reasignado, un punto importante que destacar es que aún no debe ser liberado el espacio con <b><i>free()</b></i>. De lo contrario el valor va a ser indefinido.
+Si se necesita expandir el puntero previamente asignado en la memoria. `realloc()` permite desasignar el viejo objeto al ptr, y retorna un puntero al objeto el cual tiene el tamaño especifico. Este ptr es un puntero en la memoria que previamente fue asignado con la misma `realloc()`, `calloc()` o `malloc()`, esto con el fin de ser reasignado, un punto importante que destacar es que aún no debe ser liberado el espacio con `free()`. De lo contrario el valor va a ser indefinido.
 
 La reasignación puede ser hecha si:
 
@@ -186,10 +186,10 @@ int main() {
 ```
 
 ### <a href="../01 - ManejoMemoria/01 - 06 - reallocVSfree.c">"realloc(ptr, 0)" no es lo mismo que "free(ptr)".</a>
-Aunque <b><i>realloc(pr, 0)</b></i> técnicamente libera memoria, no siempre es equivalente a <b><i>free(ptr)</b></i> debido a que el comportamiento de <b><i>realloc()</b></i> puede depender del sistema. En algunos casos, puede devolver un puntero <b><i>NULL</b></i> sin liberar memoria correctamente.
+Aunque `realloc(pr, 0)` técnicamente libera memoria, no siempre es equivalente a `free(ptr)` debido a que el comportamiento de `realloc()` puede depender del sistema. En algunos casos, puede devolver un puntero `>NULL` sin liberar memoria correctamente.
 
 ### <a href="../01 - ManejoMemoria/01 - 07 - VLA.c">Arreglos Multidimensionales de Tamaño Variable.</a>
-C permite tener arreglos de longitud variable (VLA), estos arreglos son modelados con límites que solo se conocen en el momento, por lo tanto, es importante no asignar un VLA muy largo, utilizar apuntadores para VLAs con <b><i>sizeof</b></i> es correcto.
+C permite tener arreglos de longitud variable (VLA), estos arreglos son modelados con límites que solo se conocen en el momento, por lo tanto, es importante no asignar un VLA muy largo, utilizar apuntadores para VLAs con `sizeof` es correcto.
 
 ```C
 double sumTodo(size_t n, size_t m, size_t A[n][m]) {
@@ -212,13 +212,13 @@ int main(int argc, char *argv[argc + 1]) {
 }
 ```
 
-La matriz es un apuntador a elementos del tipo <b><i>double[m]</b></i>, y la expresión <b><i>sizeof</b></i> con <b><i>double[n][m]</b></i> asegura que el espacio reservado sea el necesario para los n elementos. Todo este espacio de memoria es asignado de forma contigua y se puede desasignar utilizando la función <b><i>free()</b></i>.
+La matriz es un apuntador a elementos del tipo `double[m]`, y la expresión `sizeof` con `double[n][m]` asegura que el espacio reservado sea el necesario para los n elementos. Todo este espacio de memoria es asignado de forma contigua y se puede desasignar utilizando la función `free()`.
 
 ### <a href="../01 - ManejoMemoria/01 - 08 - alloca.c">Asignar Memoria en la Pila "alloca()".</a>
-La asignación de memoria en la pila (stack) ocurre automáticamente cuando se declaran variables locales dentro de una función. Sin embargo, también se puede utilizar la función <b><i>alloca()</b></i> para asignar memoria dinámica en la pila. La memoria asignada con <b><i>alloca()</b></i> se libera automáticamente cuando la función termina, lo que la diferencia de <b><i>malloc()</b></i> (que asigna memoria en el montón y requiere liberación manual con <b><i>free()</b></i>).
+La asignación de memoria en la pila (stack) ocurre automáticamente cuando se declaran variables locales dentro de una función. Sin embargo, también se puede utilizar la función `alloca()` para asignar memoria dinámica en la pila. La memoria asignada con `alloca()` se libera automáticamente cuando la función termina, lo que la diferencia de `malloc()` (que asigna memoria en el montón y requiere liberación manual con `free()`).
 
 ### <a href="../01 - ManejoMemoria/01 - 09 - MMDU.c">Manejo de Memoria Definida por el Usuario.</a>
-Para implementar un esquema simple, se almacena un bloque de control en la región de memoria inmediatamente anterior al puntero que se va a devolver de la llamada. Esto significa que <b><i>free()</b></i> puede implementarse restando del puntero devuelto y leyendo la información de control, que normalmente es el tamaño del bloque más alguna información que permite volver a colocarlo en la lista libre, una lista enlazada de bloques no asignados.
+Para implementar un esquema simple, se almacena un bloque de control en la región de memoria inmediatamente anterior al puntero que se va a devolver de la llamada. Esto significa que `free()` puede implementarse restando del puntero devuelto y leyendo la información de control, que normalmente es el tamaño del bloque más alguna información que permite volver a colocarlo en la lista libre, una lista enlazada de bloques no asignados.
 
 Cuando el usuario solicita una asignación, se busca en la lista libre hasta que se encuentra un bloque de tamaño idéntico o mayor a la cantidad solicitada; luego, si es necesario, se divide. Esto puede provocar fragmentación de la memoria si el usuario está continuamente realizando muchas asignaciones y liberaciones de tamaño impredecible y a intervalos impredecibles (no todos los programas reales se comportan así, el esquema simple suele ser adecuado para programas pequeños).
 

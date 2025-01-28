@@ -1,5 +1,5 @@
 # FUNCIONES STRING :chains:
-Las funciones de tipo string (str) permiten realizar operaciones para el manejo de cadenas de caracteres en el lenguaje C, por ello es importante incluir la librería <b><i>"string.h"</i></b> de la siguiente manera:
+Las funciones de tipo string (str) permiten realizar operaciones para el manejo de cadenas de caracteres en el lenguaje C, por ello es importante incluir la librería `string.h` de la siguiente manera:
 ```C
 // DIRECTIVAS DE PREPROCESADOR
 #include <stdio.h>
@@ -9,18 +9,14 @@ Las funciones de tipo string (str) permiten realizar operaciones para el manejo 
 Una vez incorporada la librería es posible ahora si manejar las siguientes funciones de trabajo para las cadenas de caracteres:
 ### <a href="13 - 01 - strcpy.c">String copy.</a>
 Permite copiar una cadena de caracteres en otra, para ello es necesario considerar que la dimensión del arreglo de destino debe ser igual o mayor que el arreglo de origen, y que, además, sobrescribe el contenido del destino (de existir).
-$$
-\text{Dimensiones} \{ A_{\text{Destino}} \geq A_{\text{Origen}} \}
-$$
+
 ```C
 strcpy(Destino, Origen);
 ```
 
 ### <a href="13 - 02 - strcat.c">String concatenate.</a>
 Concatena (agrega/suma) la cadena fuente en el destino, se debe considerar que la cadena de destino debe tener un tamaño tal que pueda albergar la cadena resultante.
-$$
-A_{\text{Final}}\[Tamaño optimo\] \eq  A_{\text{Fuente_{\text{1}}}} +  A_{\text{Fuente_{\text{2}}}} + \cdots + A_{\text{Fuente_{\text{n}}}}
-$$
+
 ```C
 strcpy(Destino, Origen);
 ```
@@ -41,7 +37,7 @@ strcmp(Cadena_1, Cadena_2);
 ```
 
 ### <a href="13 - 04 - strlen.c">String length.</a>
-Devuelve un número entero que representa la longitud de una cádena de texto (Incluyendo espacios en blanco, pero excluyendo el carácter NULL).
+Devuelve un número entero que representa la longitud de una cádena de texto (Incluyendo espacios en blanco, pero excluyendo el carácter `NULL`).
 ```C
 strlen(Cadena);
 ```

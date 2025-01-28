@@ -27,7 +27,7 @@ variable = &nombreApuntadorSimple;                          // Después de la de
 tipoDato **nombreApuntadorDoble = &nombreApuntadorSimple;   // Con la declaración
 ```
 
-Para poder acceder al valor al cual apunta el apuntador doble, se necesita desreferenciar con el operador * dos veces, es decir:
+Para poder acceder al valor al cual apunta el apuntador doble, se necesita desreferenciar con el operador `*` dos veces, es decir:
 
 ```C
 *nombreApuntadorSimple;                 // Da la dirección de memoria del apuntador simple.
@@ -69,7 +69,7 @@ La sintaxis para declarar una función con apuntadores es:
 tipoDato (*nombreApuntador)(tipoDatoComoParametro);
 ```
 
-El parentesis que encapsula al apuntador es necesario, ya que si no tiene este encapsulado, se tratara como una función simple con la diferencia que el tipo de retorno sería el operador * y el nombre del apuntador.
+El parentesis que encapsula al apuntador es necesario, ya que si no tiene este encapsulado, se tratara como una función simple con la diferencia que el tipo de retorno sería el operador `*` y el nombre del apuntador.
 
 Para poder inicializar dicha función es necesario hacer uso del operador de dirección y almacenarlo en la misma variable con el nombre del apuntador que se le asigno, osea:
 
