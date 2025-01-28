@@ -2,7 +2,7 @@
 En C como en cualquier otro lenguaje de programación las variables son una parte muy importante para poder programar, las variables en la programación como en las matemáticas tienen un rol de carcasa, dicha carcasa guarda un valor deseado dentro de ella y este valor puede o no ser modificado a través del programa. Para poder declarar variables de manera correcta es necesario cuidar la sintaxis, semántica y no incluir simbolos tales como "!", "?", "#", etc., para ello véase como poder declarar variables con una sintaxis correcta de la siguiente forma:
 
 - <b><i>Manera correcta</i></b>: `miVariable`, `Mi_Variable2`, `miVariable3`, `MiVariable4`.
-- <b><i>Manera incorrecta</i></b>: `m!Variabl3`, `Mi Variable2`, `M1_Variabl 3`, "#M1Variab13`.
+- <b><i>Manera incorrecta</i></b>: `m!Variabl3`, `Mi Variable2`, `M1_Variabl 3`, `#M1Variab13`.
 
 Dentro del lenguaje C se tienen dos tipos de variables:
 
