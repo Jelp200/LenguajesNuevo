@@ -80,32 +80,32 @@ Son operadores los cuales permiten realizar el manejo de bits y sólo pueden ser
 └───────────────┴─────────────────────────┘
 ```
 
-El operador <b><i>"&"</i></b> a menudo <b><i>permite enmascarar algún conjunto de bits</i></b>, por ejemplo:
+El operador `&` a menudo <b><i>permite enmascarar algún conjunto de bits</i></b>, por ejemplo:
 ```C
 n = n & 0177;
 ```
 El fragmento de código anterior hace cero todos los bits n, exceptuando los 7 de menor orden.
 
-El operador <b><i>"|" permite encender bits</i></b>, por ejemplo:
+El operador `|` <b><i>permite encender bits</i></b>, por ejemplo:
 ```C
 n = n | SET_ON;
 ```
 El fragmento de código anterior fija a todos los bits de “n” en uno en “SET_ON”.
 
-El operador <b><i>"^" permite poner un uno en cada posición en donde sus operandos tienen bits diferentes, y cero en donde son iguales</i></b>, por ejemplo:
+El operador `^` <b><i>permite poner un uno en cada posición en donde sus operandos tienen bits diferentes, y cero en donde son iguales</i></b>, por ejemplo:
 ```C
 n = a ^ b; // a = 1010 y b = 0011
 ```
 En el fragmento de código anterior "n" toma el valor de 1001.
 
-Los operadores <b><i>"<<" y ">>" realizan corrimientos a la izquierda y derecha de su operando el cual está a la izquierda, el número de posiciones de bits esta dado por el operando a la derecha y el cual debe ser positivo</i></b>. Así por ejemplo si se tiene un numero "n# el cual debe ser desplazado dos veces a la izquierda se tiene:
+Los operadores `<<` y `>>` <b><i>realizan corrimientos a la izquierda y derecha de su operando el cual está a la izquierda, el número de posiciones de bits esta dado por el operando a la derecha y el cual debe ser positivo</i></b>. Así por ejemplo si se tiene un numero "n# el cual debe ser desplazado dos veces a la izquierda se tiene:
 ```C
 desplazamientoIzquierda = n << 2;
 ```
 El fragmento de código anterior desplaza el valor de "n" a la izquierda dos posiciones, llenando los bits vacantes con cero.
 El correr a la derecha una cantidad no asignada siempre llena los bits vacantes con cero. El correr a la derecha una cantidad asignada llenara con bits de signo en algunas computadoras y con bits cero (corrimiento lógico) en otras.
 
-El operador <b><i>"~" da el complemento a uno de un entero; esto es, convierte cada bit uno a cero y viceversa</i></b>, por ejemplo:
+El operador `~` <b><i>da el complemento a uno de un entero; esto es, convierte cada bit uno a cero y viceversa</i></b>, por ejemplo:
 ```C
 n = n &~ 077;
 ```
@@ -125,7 +125,7 @@ Son operadores los cuales permiten al igual que los operadores aritméticos, rea
 └───────────────┴───────────────────┴─────────────────────────┘
 ```
 
-Es importante distinguir estos operadores lógicos de los operadores de manejo de bits, ya que los operadores lógicos implican una evaluación de izquierda a derecha de un valor de verdad. Por ejemplo, si "x" es uno y "y" es dos, entonces "x & y" es cero en tanto que "x && y" es uno.
+Es importante distinguir estos operadores lógicos de los operadores de manejo de bits, ya que los operadores lógicos implican una evaluación de izquierda a derecha de un valor de verdad. Por ejemplo, si `x` es uno y `y` es dos, entonces `x & y` es cero en tanto que `x && y` es uno.
 
 
 Regresar al menú de fundamentos <a href="../01 - FundamentosDeProgramacion/00 - Fundamentos.md">Click aquí</a>.
