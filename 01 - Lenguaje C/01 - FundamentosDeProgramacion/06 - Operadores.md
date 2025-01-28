@@ -57,10 +57,10 @@ Son operadores los cuales permiten realizar asignaciones dentro de un programa.
 
 ### Manejo de bits.
 Son operadores los cuales permiten realizar el manejo de bits y sólo pueden ser aplicados a operadores integrales (tipos de datos), estos quiere decir que son aplicables a:
-- char
-- short
-- int
-- long
+- `char`
+- `short`
+- `int`
+- `long`
 
 ```txt
 ┌───────────────┬─────────────────────────┐
