@@ -126,23 +126,27 @@ tipoAlmacenamiento tipoDato Nombre[exp1] [exp2], …, [expN];
 ```
 
 $$
-  A = \begin{pmatrix}
-  a_{11} & \cdots & a_{1n} \\
-  \vdots & \ddots & \vdots \\
-  a_{m1} & \cdots & a_{mn}
-  \end{pmatrix}
+A = \begin{pmatrix}
+a_{11} & \cdots & a_{1n} \\
+\vdots & \ddots & \vdots \\
+a_{m1} & \cdots & a_{mn}
+\end{pmatrix}
+$$
 
-  B = \begin{pmatrix}
-  b_{11} & \cdots & b_{1n} \\
-  \vdots & \ddots & \vdots \\
-  b_{m1} & \cdots & b_{mn}
-  \end{pmatrix}
+$$
+B = \begin{pmatrix}
+b_{11} & \cdots & b_{1n} \\
+\vdots & \ddots & \vdots \\
+b_{m1} & \cdots & b_{mn}
+\end{pmatrix}
+$$
 
-  X = \begin{pmatrix}
-  x_{11} & \cdots & x_{1n} \\
-  \vdots & \ddots & \vdots \\
-  x_{m1} & \cdots & x_{mn}
-  \end{pmatrix}
+$$
+X = \begin{pmatrix}
+x_{11} & \cdots & x_{1n} \\
+\vdots & \ddots & \vdots \\
+x_{m1} & \cdots & x_{mn}
+\end{pmatrix}
 $$
 
 Para comprender de mejor manera dicho concepto, dígase que se tiene el siguiente arreglo:
