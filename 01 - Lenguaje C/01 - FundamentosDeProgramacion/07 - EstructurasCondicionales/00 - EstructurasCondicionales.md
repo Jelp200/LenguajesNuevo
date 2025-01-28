@@ -2,7 +2,7 @@
 Dentro de los lenguajes de programación en necesario tomar en cuenta las estructuras condicionales, dichas estructuras proporcionan soluciones para poder llevar a cabo tareas, rutinas u operaciones que se necesitan para dar solución a algún problema.
 
 ### <a href="07 - 01 - if.c">If.</a>
-La estructura condicional <b><i>"if"</i></b> (si) es la estructura condicional principal, esta estructura tiene como significado que, si cumple la condición establecida, el bloque de código o proceso dentro de ella se ejecutara, su diagrama de flujo y declaración están dados de la siguiente manera:
+La estructura condicional `if` (si) es la estructura condicional principal, esta estructura tiene como significado que, si cumple la condición establecida, el bloque de código o proceso dentro de ella se ejecutara, su diagrama de flujo y declaración están dados de la siguiente manera:
 
 <div> <img src="../../../imgs/01 - Lenguaje C/01 - FundamentosDeProgramacion/07 - EstructurasCondicionales/01 - if.png"> </div>
 
@@ -20,7 +20,7 @@ int main(){
 ```
 
 ### <a href="07 - 03 - ifA.c">If's anidados.</a>
-Un punto versátil que tiene la estructura condicional <b><i>"if"</i></b> es que se puede tener anidadas múltiples condiciones entre sí, esto quiere decir que se ejecutará la condición siguiente si se tiene una condición anterior a ella que se haya cumplido, su diagrama de flujo y declaración están dados de la siguiente manera:
+Un punto versátil que tiene la estructura condicional `if` es que se puede tener anidadas múltiples condiciones entre sí, esto quiere decir que se ejecutará la condición siguiente si se tiene una condición anterior a ella que se haya cumplido, su diagrama de flujo y declaración están dados de la siguiente manera:
 
 <div> <img src="../../../imgs/01 - Lenguaje C/01 - FundamentosDeProgramacion/07 - EstructurasCondicionales/02 - ifA.png"> </div>
 
@@ -63,7 +63,7 @@ int main(){
 ```
 
 ### <a href="07 - 05 - ifElseIf.c">If - else - if.</a>
-Las estructuras condicionales <b><i>"if-else-if"</i></b> o <b><i>"sino si"</i></b>, son aquellas las cuales permiten realizar una condicional y si esta no se cumple entra a otro bloque de código el cual realiza una acción si no se cumple dicha condicional puede tener una segunda condicional, su diagrama de flujo y declaración están dados de la siguiente manera:
+Las estructuras condicionales `if-else-if` o <b><i>"sino si"</i></b>, son aquellas las cuales permiten realizar una condicional y si esta no se cumple entra a otro bloque de código el cual realiza una acción si no se cumple dicha condicional puede tener una segunda condicional, su diagrama de flujo y declaración están dados de la siguiente manera:
 
 <div> <img src="../../../imgs/01 - Lenguaje C/01 - FundamentosDeProgramacion/07 - EstructurasCondicionales/04 - ifElseIf.png"> </div>
 
@@ -83,7 +83,7 @@ int main(){
 ```
 
 ### <a href="07 - 06 - opTernario.c">Operador ternario.</a>
-El operador ternario <b><i>(?)</i></b> no es una estructura de control en sí, sino, es un operador el cual permite traducir de manera más corta la estructura condicional <b><i>"if-else"</i></b>, su estructura es la siguiente:
+El operador ternario `(?)` no es una estructura de control en sí, sino, es un operador el cual permite traducir de manera más corta la estructura condicional `if-else`, su estructura es la siguiente:
 ```C
 (Condición a cumplir) ? Expresión_1 : Expresión_2;
 ```
@@ -106,13 +106,13 @@ int main(){
 ```
 
 ### <a href="07 - 07 - ifEndif.c">#if - #endif.</a>
-A diferencia del <b><i>"if"</i></b> común, <b><i>"#IF - #ENDIF"</i></b> es una directiva de preprocesador las cuales permiten crear bloques condicionales de compilación. Estas directivas permiten controlar la inclusión o exclusión de secciones de código en función de condiciones predefinidas durante el proceso de compilación, su estructura es la siguiente:
+A diferencia del `if` común, `#IF - #ENDIF` es una directiva de preprocesador las cuales permiten crear bloques condicionales de compilación. Estas directivas permiten controlar la inclusión o exclusión de secciones de código en función de condiciones predefinidas durante el proceso de compilación, su estructura es la siguiente:
 ```C
 #if expresión
     // Proceso a realizar si la expresión es verdadera
 #endif
 ```
-De igual manera que en las estructuras condicionales, <b><i>"#i - #endif"</i></b> puede integrar <b><i>"else"</i></b> utilizando la directiva <b><i>"#else"</i></b>, esto puede verse de la siguiente manera:
+De igual manera que en las estructuras condicionales, `#if - #endif"</i></b>` puede integrar `else` utilizando la directiva `#else`, esto puede verse de la siguiente manera:
 ```C
 #if expresión
     // Proceso a realizar si la expresión es verdadera
@@ -120,7 +120,7 @@ De igual manera que en las estructuras condicionales, <b><i>"#i - #endif"</i></b
     // Proceso a realizar si la expresión es falsa
 #endif
 ```
-A su vez, también es posible utilizar <b><i>"if – else - if"</i></b> con la peculiaridad que la directiva a utilizar es <b><i>"#elif"</i></b>.
+A su vez, también es posible utilizar `if – else - if` con la peculiaridad que la directiva a utilizar es `#elif`.
 ```C
 #if expresión_1
     // Proceso a realizar si la expresión_1 es verdadera
@@ -134,7 +134,7 @@ A su vez, también es posible utilizar <b><i>"if – else - if"</i></b> con la p
     // Proceso a realizar si ninguna expresión es verdadera
 #endif
 ```
-De igual forma se tiene <b><i>"ifdef"</i></b> y <b><i>"ifndef"</i></b> que permiten comprobar si una macro esta o no definida.
+De igual forma se tiene `ifdef` y `ifndef` que permiten comprobar si una macro esta o no definida.
 ```C
 #ifdef DEBUG
     // Código que se incluye si DEBUG está definido
