@@ -14,7 +14,7 @@ Un archivo puede ser clasificado en dos tipos basado en la forma de almacenar su
 #### Archivos de Texto.
 Un archivo de texto contiene datos en forma ASCII, por lo general es utilizado para almacenar un flujo de caracteres.
 
-- Cada linea de texto en un archivo termina con una nueva línea de caracter ('\n').
+- Cada linea de texto en un archivo termina con una nueva línea de caracter `\n`.
 - Puede leerse o escribirse por cualquier editor de texto.
 - Generalmente se almacena con una extención ".txt".
 - Los archivos de texto pueden ser utilizados para almacenar los códigos fuente.
@@ -88,3 +88,4 @@ Los modos de apertura permiten especificar los tipos de operaciones las cuales s
 | **_wb+_**  | Abre para lectura y escritura en modo binario. Si el archivo existe, su contenido se sobrescribe. Si el archivo no existe, se crea uno nuevo. |
 | **_a+_**   | Busca el archivo. Si el archivo se abre con éxito, `fopen()` lo carga en memoria y establece un puntero que apunta al último carácter. Abre el archivo en modo de lectura y añadir. Si el archivo no existe, se crea uno nuevo. Devuelve `NULL` si no se puede abrir el archivo. |
 | **_ab+_**  | Abre para lectura y añadir en modo binario. Si el archivo no existe, se crea uno nuevo. |
+
