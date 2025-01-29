@@ -55,7 +55,7 @@ FILE *nombreApuntadorArchivo;
 ```
 
 #### Apertura de un Archivo.
-Para abrir un archivo en C se ha visto que se utiliza la función <b><i>fopen()</i></b>, siendo su sintaxis:
+Para abrir un archivo en C se ha visto que se utiliza la función `fopen()`, siendo su sintaxis:
 
 ```C
 FILE *fopen(const char *nombreArchivo, const char *modoAcceso);
@@ -89,3 +89,105 @@ Los modos de apertura permiten especificar los tipos de operaciones las cuales s
 | **_a+_**   | Busca el archivo. Si el archivo se abre con éxito, `fopen()` lo carga en memoria y establece un puntero que apunta al último carácter. Abre el archivo en modo de lectura y añadir. Si el archivo no existe, se crea uno nuevo. Devuelve `NULL` si no se puede abrir el archivo. |
 | **_ab+_**  | Abre para lectura y añadir en modo binario. Si el archivo no existe, se crea uno nuevo. |
 
+Como se indicó anteriormente, si desea realizar operaciones en un archivo binario, debe agregar `b` al final. Por ejemplo, en lugar de `w`, debe usar `wb`, en lugar de `a+`, debe usar `a+b`.
+
+A continuación, el siguiente ejemplo abre un archivo con C.
+
+```C
+int main(){
+    // Variable tipo apuntador archivo que almacena el valor retornado por fopen().
+    FILE *fp;
+
+    // Apertura del archivo en modo lectura.
+    fopen("nombreArchivo.txt", "r");
+
+    // Verificación si el archivo ha sido abierto exitosamente.
+    if (fp == NULL){
+        printf("El archivo no existe. El programa puede que exista.");
+        exit(0);
+    }
+
+    return 0;
+}
+```
+
+El archivo no se abre debido a que no existe en el directorio fuente. Pero `fopen()` es capaz de crear un archivo el cual no existe.
+
+#### Crear un Archivo en C.
+La función `fopen()` como se dijo con anterioridad, no solo abre un archivo, sino, tambien puede crear un archivo si este no existe. Para ello, es necesario utilizar los siguientes modos de apertura que permiten la creación de un archivo: `w, w+, wb, wb+, a, a+, ab` y `ab+`. Por ejemplo:
+
+```C
+FILE *fp;
+fp = fopen("nombreArchivo.txt", "w");
+```
+
+A continuación, el siguiente ejemplo crea un archivo con C.
+
+```C
+int main(){
+    // Variable tipo apuntador archivo que almacena el valor retornado por fopen().
+    FILE *fp;
+
+    // Apertura del archivo en modo escritura para texto.
+    fopen("nombreArchivo.txt", "w");
+
+    // Verificación si el archivo ha sido abierto exitosamente.
+    if (fp == NULL){
+        printf("El archivo no existe. El programa puede que exista.");
+        exit(0);
+    } else
+        printf("El archivo ha sido creado :)");
+
+    return 0;
+}
+```
+
+#### Lectura Desde un Archivo.
+Para poder abrir un archivo en C para su correspondiente lectura se utilizan las funciones `fscanf()` o `fgets()`. Ambas funciones permiten realizar la misma operación que `scanf()` y `gets()`, pero con un parametro adicional. También existen otras funciones que pueden ser utilizadas para leer desde un archivo. Estas funciones son:
+
+| Función    | Descripción    |
+|---|---|
+| **_fscanf()_**   | Usa una cadena formateada y una lista de argumentos variables para tomar entrada desde un archivo.    |
+| **_fgets()_**   | Lee una línea completa desde el archivo.    |
+| **_fgetc()_**   | Lee un solo carácter desde el archivo.    |
+| **_fgetw()_**   | Lee un número desde un archivo.    |
+| **_fread()_**   | Lee la cantidad especificada de bytes de datos desde un archivo binario.    |
+
+Esto depende si se desea leer el archivo línea por línea o caracter por caracter.
+
+Por ejemplo:
+
+```C
+FILE *fp;
+fp = fopen("nombreArchivo.txt", "r");
+fscanf(fp, "%s %s %s %d", str1, str2, str3, &numero);
+char c = fgetc(fp);
+```
+
+La función `getc()` y otras funciones de lectura de archivos devuelven `EOF` (End Of the File) cuando alcanzan el final del archivo durante la lectura. `EOF` indica el final del archivo y su valor está definido por la implementación.
+
+###### <b><i>Nota 1.</i></b> Puede visualizarse que cuando se termina de leer una línea en particular, el apuntador archivo automaticamente se mueve al final del último caracter leído.
+
+#### Escritura de un Archivo.
+Para poder escribir un archivo en C para su correspondiente se utilizan las funciones `fprintf()` o `fputs()`. Existen otras funciones que pueden ser utilizadas para escribir un archivo. Estas funciones son:
+
+| Función    | Descripción    |
+|---|---|
+| **_fprintf()_**   | Similar a `printf()`, esta funcion utiliza un formato de argumentos de cadenas y variables para imprimir una salida en el archivo.    |
+| **_fputs()_**   | Imprime toda una líena en el archivo y pone una nueva línea al final del archivo.    |
+| **_fputc()_**   | Imprime un caracter simple en el archivo.    |
+| **_fputw()_**   | Imprime un número en el archivo.    |
+| **_fwrite()_**   | Escribe una cantidad especifica de Bytes en un archivo binario.    |
+
+Por ejemplo:
+
+```C
+FILE *fp;
+fp = fopen("nombreArchivo.txt", "w");
+frpintf(fp, "%s %s %s %d", "ESIME", "Zacatenco", "IPN", 2025);
+fputc("a", fp);
+```
+
+
+
+Regresar al menú de intermedio <a href="../00 - Intermedio.md">Click aquí</a>.
