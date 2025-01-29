@@ -188,6 +188,164 @@ frpintf(fp, "%s %s %s %d", "ESIME", "Zacatenco", "IPN", 2025);
 fputc("a", fp);
 ```
 
+#### Cierre de un Archivo.
+Para poder cerrar un archivo en C la función `fclose()` permite realizar dicha acción. Después de realizar las operaciones deseadas, es necesario y casi imperativo cerrar el archivo con el cual se esta trabajando para así liberar la memoria. La sitaxis para cerrar un archivo es:
 
+```C
+fclose(nombreApuntadorArchivo);
+```
+
+Por ejemplo:
+
+```C
+FILE *fp;
+fp = fopen("nombreArchivo.txt", "w");
+
+/* Operaciones realizadas con el archivo */
+
+fclose(fp);
+```
+
+#### Escritura y Lectura de un Archivo Binario.
+
+- Apertura de un archivo binario. Para poder abrir un archivo binario se utilizan los siguientes modos de apertura: `rb, rb+, ab, ab+, wb` y `wb+` en la función `fopen()`, al igual que la extención `.bin` al final del nombre del archivo.
+
+```C
+FILE *fp;
+fp = fopen("nombreArchivo.bin", "rb");
+```
+
+- Escritura de un archivo binario. Para poder escribir en un archivo binario se utiliza la función `fwrite()`. La sintaxis de esta función es la siguiente:
+
+```C
+size_t fwrite(const void *ptr, size_t tamano, size_t nNiembros, FILE *nombreApuntador);
+```
+
+En donde:
+
+| Parámetros            | Descripción                                              |
+|-----------------------|----------------------------------------------------------|
+| **_ptr_**             | Apuntador al bloque de memoria el cual se va a escribir. |
+| **_tamano_**          | Tamaño de cada elemento a escribit en Bytes.             |
+| **_nMiembros_**       | Número de elementos.                                     |
+| **_nombreApuntador_** | Nombre del apuntador archivo para el flujo de salida.    |
+
+Por ejemplo, el siguiente programa permite escribir a un archivo binario utilizando `fwrite()`:
+
+```C
+struct tresNumeros { int n1, n2, n3; };
+
+int main() {
+    int n;
+
+    //* Variable estructura
+    struct tresNumeros num;
+
+    FILE *fp;
+
+    //* Si el apuntador al archivo es NULL el programa se cerrara.
+    if((fp = fopen("C://programa.bin", "wb")) == NULL) {
+        printf("Error al abrir el archivo.");
+        exit(1);
+    }
+
+    int flag = 0;
+    // Sino, se retornara un apuntador al archivo.
+    for(n = 1; n < 5; ++n) {
+        num.n1 = n;
+        num.n2 = n * 5;
+        num.n3 = n * 5 + 1;
+
+        flag = fwrite(&num, sizeof(struct tresNumeros), 1, fp);
+    }
+
+    //* Verificación si los datos se escribieron correctamente.
+    if(!flag) 
+        printf("Operación de escritura fallida.");
+    else
+        printf("Operación de escritura correcta.");
+
+    fclose(fp);
+
+    return 0;
+}
+```
+
+- Lectura de un archivo binario. Para poder leer un archivo binario se utiliza la función `fread()`. La sintaxis de esta función es la siguiente:
+
+```C
+size_t fread(void *ptr, size_t tamano, size_t nNiembros, FILE *nombreApuntador);
+```
+
+En donde:
+
+| Parámetros            | Descripción                                              |
+|-----------------------|----------------------------------------------------------|
+| **_ptr_**             | Apuntador al bloque de memoria el cual se va a escribir. |
+| **_tamano_**          | Tamaño de cada elemento a escribit en Bytes.             |
+| **_nMiembros_**       | Número de elementos.                                     |
+| **_nombreApuntador_** | Nombre del apuntador archivo para el flujo de salida.    |
+
+Por ejemplo, el siguiente programa permite leer un archivo binario utilizando `fread()`:
+
+```C
+struct tresNumeros { int n1, n2, n3; };
+
+int main() {
+    int n;
+
+    //* Variable estructura
+    struct tresNumeros num;
+
+    FILE *fp;
+
+    //* Si el apuntador al archivo es NULL el programa se cerrara.
+    if((fp = fopen("C://programa.bin", "rb")) == NULL) {
+        printf("Error al abrir el archivo.");
+        exit(1);
+    }
+
+    // Sino, se retornara un apuntador al archivo.
+    for(n = 1; n < 5; ++n) {
+        fread(&num, sizeof(struct tresNumeros), 1, fp);
+        printf("n1: %d\tn2: %d\tn3: %d\n", num.n1, num.n2, num.n3););
+    }
+
+    fclose(fp);
+
+    return 0;
+}
+```
+
+#### fseek() en C.
+Si se tienen multiples registros dentro de un archivo y se necesita acceder a un registro en particular que se encuentre en una posición especifica, entonces es necesario recorrer todos los registros anteriores para obtener el registro deseado. Hacer esto desperdiciará mucha memoria y tiempo operativo. Para reducir el consumo de memoria y el tiempo operativo, es posible utilizar `fseek()` que proporciona una forma más fácil de llegar a los datos requeridos. La función `fseek()` en C busca el cursor en el registro dado en el archivo. . La sintaxis de esta función es la siguiente:
+
+```C
+int fseek(FILE *nombreApuntador, long int offset, int pos);
+```
+
+#### rewind() en C.
+La función `rewind()` se utiliza para llevar el puntero del archivo al principio del archivo. Se puede utilizar en lugar de `fseek()` cuando se desea que el puntero del archivo esté al principio.
+
+```C
+int fseek(nombreApuntador);
+```
+
+#### Más funciones para operar archivos en C.
+
+| Funciones    | Descripción    |
+|---|---|
+| **_fopen()_**    | Se utiliza para crear o abrir un archivo.    |
+| **_fclose()_**    | Se utiliza para cerrar un archivo.    |
+| **_fgets()_**    | Se utiliza para leer un archivo.    |
+| **_fprintf()_**    | Se utiliza para escribir bloques de datos en un archivo.    |
+| **_fscanf()_**    | Se utiliza para leer bloques de datos desde un archivo.    |
+| **_getc()_**    | Se utiliza para leer un solo carácter de un archivo.    |
+| **_putc()_**    | Se utiliza para escribir un solo carácter en un archivo.    |
+| **_fseek()_**    | Se utiliza para establecer la posición de un puntero de archivo en una ubicación específica.    |
+| **_ftell()_**    | Se utiliza para devolver la posición actual de un puntero de archivo.    |
+| **_rewind()_**    | Se utiliza para establecer el puntero de archivo al inicio del archivo.    |
+| **_putw()_**    | Se utiliza para escribir un entero en un archivo.    |
+| **_getw()_**    | Se utiliza para leer un entero desde un archivo.    |
 
 Regresar al menú de intermedio <a href="../00 - Intermedio.md">Click aquí</a>.
