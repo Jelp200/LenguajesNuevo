@@ -8,7 +8,7 @@ Para entender por qué es importante el manejo de archivos, veamos algunas carac
 - Eficiencia: Puede requerirse una gran cantidad de entrada para algunos programas. El manejo de archivos le permite acceder fácilmente a una parte de un archivo utilizando pocas instrucciones, lo que ahorra mucho tiempo y reduce la posibilidad de errores.
 - Capacidad de almacenamiento: Los archivos le permiten almacenar una gran cantidad de datos sin tener que preocuparse por almacenar todo simultáneamente en un programa.
 
-### <a href="">Lectura y Escritura de Archivos (Modo Texto y Binario).</a>
+### <a href="03 - 01 - LEA_Txt&Bin.c">Lectura y Escritura de Archivos (Modo Texto y Binario).</a>
 Un archivo puede ser clasificado en dos tipos basado en la forma de almacenar sus datos.
 
 #### Archivos de Texto.
@@ -347,5 +347,58 @@ int fseek(nombreApuntador);
 | **_rewind()_**    | Se utiliza para establecer el puntero de archivo al inicio del archivo.    |
 | **_putw()_**    | Se utiliza para escribir un entero en un archivo.    |
 | **_getw()_**    | Se utiliza para leer un entero desde un archivo.    |
+
+### Manejo de Errores.
+Las operaciones vistas con anterioridad pueden fallar por multiples razones, entre ellas:
+
+- **Archivo no existente** (Al intentar abrirlo en modo lectura).
+- **Permisos insuficientes** (Escritura de un archivo en modo lectura).
+- **Espacio en disco insuficiente.**
+- **Errores de E/S** (Fallos físicos en el dispositivo de almacenamiento).
+
+Para poder manejar estos errores, C proporciona:
+
+- **Valores de retorno** de funciones como `NULL` en `fopen()` o `EOF` en `fgetc()`.
+- **variables globales** como `errno` (número de error) y funciones como `perror()` o `sterror` para obtener descripciones legibles.
+
+### <a href="">Funciones clave para el manejo de errores.</a>
+
+| Funciones    | Descripción    |
+|---|---|
+| **_perror()_**    | Imprime un mensaje de error descriptivo basado en el valor de `errno`.    |
+| **_feof()_**    | Verifica si se alcanzó el final del archivo (`EOF`).    |
+| **_ferror()_**    | Verifica si ocurrió un error durante una operación de archivo.    |
+| **_strerror()_**    | Devuelve una cadena descriptiva del error almacenado en errno.    |
+
+### Mejores practicas para el manejo de errores.
+
+- **Siempre verificar el retorno de `fopen()`:**
+```C
+FILE *archivo = fopen("ruta", "modo");
+if (archivo == NULL) {
+    // Manejar error
+}
+```
+
+- **Cerrar archivos incluso si hay errores:**
+```C
+FILE *archivo = fopen(...);
+if (archivo == NULL) { ... }
+
+// Operaciones...
+if (error) {
+    fclose(archivo); // ¡Importante!
+    return 1;
+}
+```
+
+- **Usar `perror()` o `strerror()` para mensajes claros:**
+```C
+perror("Error crítico");
+// O
+printf("Error: %s\n", strerror(errno));
+```
+
+- **Limpiar `errno` antes de operaciones críticas (usando `errno = 0`).**
 
 Regresar al menú de intermedio <a href="../00 - Intermedio.md">Click aquí</a>.
