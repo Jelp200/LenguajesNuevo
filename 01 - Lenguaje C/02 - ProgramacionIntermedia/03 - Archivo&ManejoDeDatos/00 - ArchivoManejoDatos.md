@@ -401,4 +401,122 @@ printf("Error: %s\n", strerror(errno));
 
 - **Limpiar `errno` antes de operaciones críticas (usando `errno = 0`).**
 
+### <a href="03 - 02 - PGVD_Unix-Like.c">Procesamiento de Grandes Volúmenes de Datos.</a>
+Existen varios desafios al procesar archivos grandes:
+
+- **Consumo de memoria:** Cargar todo el archivo en memoria no es viable.
+- **Eficiencia de E/S:** Lecturas/Escrituras secuenciales o aleatorias deben optimizarse.
+- **Manejo de errores:** Fallos en disco lleno, archivos corruptos o permisos.
+- **Rendimiento:** Minimizar el tiempo de procesamiento.
+
+Las estrategias clave para realizar el procesamiento de estos grandes volúmenes de datos son:
+
+#### <a href="03 - 04 - PB.c">Procesamiento por bloques: Leer/Escribir datos fragmentados.</a>
+El procesamiento por bloques es una técnica en la que los datos se leen o escriben en fragmentos (bloques) en lugar de hacerlo de una sola vez. Esto es especialmente útil cuando se trabaja con grandes volúmenes de datos que no caben en la memoria principal (RAM) de una sola vez.
+
+- **Lectura por bloques:** En lugar de leer un archivo completo en memoria, se lee un bloque de datos de un tamaño específico (por ejemplo, 4 KB, 8 KB, etc.). Esto permite manejar archivos grandes sin consumir toda la memoria disponible.
+
+```C
+FILE *file = fopen("archivoGrande.dat", "rb");
+
+if (file) {
+    char buffer[4096]; // Buffer de 4 KB
+    size_t bytesRead;
+    while ((bytesRead = fread(buffer, 1, sizeof(buffer), file)) > 0) {
+        // Procesar el bloque de datos en buffer
+    }
+    fclose(file);
+}
+```
+
+- **Escritura por bloques:** Similar a la lectura, la escritura se realiza en bloques. Esto es útil para escribir grandes cantidades de datos en un archivo sin necesidad de tener todo el contenido en memoria al mismo tiempo.
+
+```C
+FILE *file = fopen("archivoSalida.dat", "wb");
+
+if (file) {
+    char buffer[4096]; // Buffer de 4 KB
+    // Llenar el buffer con datos
+    fwrite(buffer, 1, sizeof(buffer), file);
+    fclose(file);
+}
+```
+
+#### <a href="03 - 05 - Buffering.c">Buffering: Usar buffers grandes para reducir llamadas al sistema.</a>
+El buffering es una técnica que consiste en utilizar un área de memoria (buffer) para almacenar temporalmente datos antes de que sean procesados o escritos. Esto reduce el número de llamadas al sistema, lo que puede mejorar el rendimiento, especialmente en operaciones de entrada/salida (I/O).
+
+- **Buffering en lectura:** Al leer datos de un archivo, un buffer grande puede reducir el número de llamadas al sistema `read`, ya que se leen grandes cantidades de datos de una sola vez.
+
+```C
+FILE *file = fopen("archivoGrande.dat", "rb");
+
+if (file) {
+    char buffer[65536]; // Buffer de 64 KB
+    setvbuf(file, buffer, _IOFBF, sizeof(buffer)); // Asignar un buffer grande
+    // Leer datos del archivo
+    fclose(file);
+}
+```
+
+- **Buffering en escritura:** De manera similar, al escribir datos, un buffer grande reduce el número de llamadas al sistema `write`.
+
+```C
+FILE *file = fopen("archivoSalida.dat", "wb");
+
+if (file) {
+    char buffer[65536]; // Buffer de 64 KB
+    setvbuf(file, buffer, _IOFBF, sizeof(buffer)); // Asignar un buffer grande
+    // Escribir datos en el archivo
+    fclose(file);
+}
+```
+
+#### <a href="03 - 06 - MP.c">Memoria mapeada: Mapear archivos directamente a memoria.</a>
+La memoria mapeada es una técnica avanzada que permite mapear un archivo directamente en la memoria del proceso. Esto significa que el archivo se trata como si fuera una región de memoria, lo que puede simplificar el acceso a los datos y mejorar el rendimiento en ciertos casos.
+
+- **Mapeo de archivos:** En sistemas Unix-like, se puede usar la función `mmap` para mapear un archivo en memoria.
+
+```C
+#include <sys/mman.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int fd = open("archivoGrande.dat", O_RDONLY);
+if (fd != -1) {
+    off_t fileSize = lseek(fd, 0, SEEK_END);
+    void *mapped = mmap(NULL, fileSize, PROT_READ, MAP_PRIVATE, fd, 0);
+    if (mapped != MAP_FAILED) {
+        // Acceder a los datos del archivo como si fueran memoria
+        munmap(mapped, fileSize); // Liberar el mapeo
+    }
+    close(fd);
+}
+```
+
+- Ventajas: El acceso a los datos es más rápido porque no se realizan llamadas al sistema para leer o escribir en el archivo. Además, el sistema operativo maneja la carga y descarga de datos en memoria de manera eficiente.
+
+- Desventajas: El uso de memoria mapeada puede consumir mucha memoria si el archivo es muy grande, y no es portable a todos los sistemas.
+
+#### <a href="">Flujos de datos: Procesar datos mientras se leen, sin almacenarlos completos.</a>
+El procesamiento de flujos de datos implica procesar los datos a medida que se leen, sin necesidad de almacenar todo el conjunto de datos en memoria. Esto es útil cuando se trabaja con flujos continuos de datos o cuando el volumen de datos es demasiado grande para ser almacenado en memoria.
+
+- **Procesamiento en tiempo real:** Los datos se procesan a medida que llegan, lo que permite manejar flujos de datos en tiempo real, como transmisiones de video, audio o datos de sensores.
+
+```C
+FILE *file = fopen("flujoDatos.dat", "rb");
+
+if (file) {
+    char buffer[1024]; // Buffer de 1 KB
+    size_t bytesRead;
+    while ((bytesRead = fread(buffer, 1, sizeof(buffer), file)) > 0) {
+        // Procesar los datos en buffer inmediatamente
+    }
+    fclose(file);
+}
+```
+
+- Ventajas: Reduce la necesidad de memoria, ya que no es necesario almacenar todos los datos antes de procesarlos. Además, permite un procesamiento más rápido, ya que los datos se procesan a medida que llegan.
+
+- Desventajas: El procesamiento debe ser lo suficientemente rápido para manejar la tasa de llegada de los datos, de lo contrario, podría haber pérdida de datos o retrasos.
+
 Regresar al menú de intermedio <a href="../00 - Intermedio.md">Click aquí</a>.
