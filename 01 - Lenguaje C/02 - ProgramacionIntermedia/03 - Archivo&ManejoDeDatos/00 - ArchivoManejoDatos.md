@@ -361,7 +361,7 @@ Para poder manejar estos errores, C proporciona:
 - **Valores de retorno** de funciones como `NULL` en `fopen()` o `EOF` en `fgetc()`.
 - **variables globales** como `errno` (número de error) y funciones como `perror()` o `sterror` para obtener descripciones legibles.
 
-### <a href="">Funciones clave para el manejo de errores.</a>
+### Funciones clave para el manejo de errores.
 
 | Funciones    | Descripción    |
 |---|---|
