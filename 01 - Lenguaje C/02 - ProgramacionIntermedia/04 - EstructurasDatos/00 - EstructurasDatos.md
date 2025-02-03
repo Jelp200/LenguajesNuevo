@@ -47,8 +47,8 @@ El arreglo `nombreArreglo` de tamaño `numeroFilas` x `numeroColumnas` se repres
 
 $$
 \text{nombreArreglo} = \begin{bmatrix}
-\text{dato}_{11} & \text{dato}_{12} & \cdots & \text{dato}_{1n} \\
-\text{dato}_{21} & \text{dato}_{22} & \cdots & \text{dato}_{2n} \\
+\text{dato}_{11} & \text{dato}_{12} & \cdots & \text{dato}_{1n}
+\text{dato}_{21} & \text{dato}_{22} & \cdots & \text{dato}_{2n}
 \vdots & \vdots & \ddots & \vdots \\
 \text{dato}_{m1} & \text{dato}_{m2} & \cdots & \text{dato}_{mn}
 \end{bmatrix}
