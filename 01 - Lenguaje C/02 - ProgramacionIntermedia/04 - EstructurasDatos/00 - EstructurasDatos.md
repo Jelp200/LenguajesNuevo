@@ -43,17 +43,6 @@ Los arreglos de dos dimesiones o tambien llamados matrices, son estructuras de d
 tipoDato nombreArreglo[numeroFilas][numeroColumnas] = {{datosFila}, {datosColumna}};
 ```
 
-El arreglo `nombreArreglo` de tamaño `numeroFilas` x `numeroColumnas` se representa como:
-
-$$
-\text{nombreArreglo} = \begin{bmatrix}
-\text{dato}_{11} & \text{dato}_{12} & \cdots & \text{dato}_{1n}
-\text{dato}_{21} & \text{dato}_{22} & \cdots & \text{dato}_{2n}
-\vdots & \vdots & \ddots & \vdots \\
-\text{dato}_{m1} & \text{dato}_{m2} & \cdots & \text{dato}_{mn}
-\end{bmatrix}
-$$
-
 ### <a href="../../01 - FundamentosDeProgramacion/22 - EntradasSalidasEstandar/00 - EntradaSalidasEstandar.md">Cadenas.</a>
 Las cadenas de caracteres o strings, son utilizadas tipicamente para representar texto. Son consideradas un tipo de datos que permiten las manipulación y procesamiento de datos tipo texto en programas.
 
