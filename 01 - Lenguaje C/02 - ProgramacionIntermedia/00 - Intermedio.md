@@ -6,6 +6,7 @@ Una vez que se ha dominado los conceptos básicos de la programación en C, es d
     <li><a href="01 - ManejoMemoria/00 - ManejoMemoria.md">Manejo de memoria.</a></li>
     <li><a href="02 - Apuntadores (Avanzado)/00 - ApuntadoresAvanzados.md">Apuntadores (Avanzado).</a></li>
     <li><a href="03 - Archivo&ManejoDeDatos/00 - ArchivoManejoDatos.md">Archivos y Manejo de Datos.</a></li>
+    <li><a href="04 - EstructurasDatos/00 - EstructurasDatos.md">Estructuras de Datos.</a></li>
     
 </ul>
 
