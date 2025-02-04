@@ -361,7 +361,7 @@ Para poder manejar estos errores, C proporciona:
 - **Valores de retorno** de funciones como `NULL` en `fopen()` o `EOF` en `fgetc()`.
 - **variables globales** como `errno` (número de error) y funciones como `perror()` o `sterror` para obtener descripciones legibles.
 
-### Funciones clave para el manejo de errores.
+#### Funciones clave para el manejo de errores.
 
 | Funciones    | Descripción    |
 |---|---|
@@ -370,7 +370,7 @@ Para poder manejar estos errores, C proporciona:
 | **_ferror()_**    | Verifica si ocurrió un error durante una operación de archivo.    |
 | **_strerror()_**    | Devuelve una cadena descriptiva del error almacenado en errno.    |
 
-### Mejores practicas para el manejo de errores.
+#### Mejores practicas para el manejo de errores.
 
 - **Siempre verificar el retorno de `fopen()`:**
 ```C
