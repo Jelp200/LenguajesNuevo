@@ -138,7 +138,84 @@ Siendo su algoritmo el siguiente:
 
 #### Implementaciones de las pilas.
 
-- <a href=""><b><i>Implementación de una pila utilizando arreglos.</i></b></a>
-- <a href=""><b><i>Implementación de una pila utilizando listas enlazadas.</i></b></a>
+- <a href="04 - 04 - Stack/04 - 04 - 07 - IPUA/04 - 04 - 07 - IPUA.md"><b><i>Implementación de una pila utilizando arreglos.</i></b></a>
+- <a href="04 - 04 - Stack/04 - 04 - 08 - IPULE/04 - 04 - 08 - IPULE.md"><b><i>Implementación de una pila utilizando listas enlazadas.</i></b></a>
+
+### <a href="04 - 05 - Queue/04 - 05 - 07 - QueueComplete.c">Colas.</a>
+Las colas son estructuras de datos que sigues el principio <b><i>FIFO (First-in, First-out)</i></b>, es decir, el primer elemento que entra es el primero que sale.
+
+#### Principio del FIFO.
+El principio de FIFO dice que el primer elemento que ingresa dentro de la cola, es el primero que es eliminado en el proceos. Entonces, una cola, como su nombre lo dice, es como una líena de pago en un supermercado, el cajero atiende al primer cliente que ingresa a la cola del supermercado, y este mismo cliente sale como llego.
+
+<div><img src="../../../imgs/01 - Lenguaje C/02 - ProgramacionIntermedia/04 - ED/QUE.png"></div>
+
+#### Terminología Basica de las Colas.
+- <b><i>Front:</i></b> Se le conoce como "Front" a la posición de entrada en una cola lista para ser atendida, es decir, la primera entrada que será eliminada de la cola, se denomina frente de la cola. También se le conoce como cabeza de la cola.
+- <b><i>Rear:</i></b> La posición de la última entrada en la cola, es decir, la última que se agregó, se denomina final de la cola. También se la conoce como cola de la cola.
+- <b><i>Size:</i></b> El tamaño se refiere al número actual de elementos en la cola.
+- <b><i>Capacity:</i></b> La capacidad se refiere al número máximo de elementos que la cola puede contener.
+
+#### Representación Gráfica de una Cola.
+
+<div><img src="../../../imgs/01 - Lenguaje C/02 - ProgramacionIntermedia/04 - ED/QUE_2.png"></div>
+
+#### Tipos de colas.
+- <b><i>Cola simple.</i></b> La cola simple sigue simplemente la estructura FIFO. Solo es posible insertar el elemento al final y eliminar el elemento del frente de la cola.
+- <b><i>Cola de doble extremo (Deque).</i></b> En una cola de doble extremo, las operaciones de inserción y eliminación pueden realizarse desde ambos extremos. Son de dos tipos:
+-- Cola de entrada restringida: Esta es una cola simple. En este tipo de cola, la entrada se puede tomar solo de un extremo, pero la eliminación se puede realizar desde cualquiera de los extremos.
+-- Cola de salida restringida: Esta también es una cola simple. En este tipo de cola, la entrada se puede tomar de ambos extremos, pero la eliminación se puede realizar solo desde un extremo
+- <b><i>Cola circular.</i></b> Este es un tipo especial de cola en la que la última posición se conecta con la primera. Aquí también las operaciones se realizan en orden FIFO.
+- <b><i>Cola de prioridad.</i></b> Una cola de prioridad es una cola especial en la que se accede a los elementos en función de la prioridad que se les asigna. Son de dos tipos:
+-- Cola de prioridad ascendente: En la cola de prioridad ascendente, los elementos se organizan en orden creciente de sus valores de prioridad. El elemento con el valor de prioridad más bajo se elimina primero.
+-- Cola de prioridad descendente: En la cola de prioridad descendente, los elementos se organizan en orden decreciente de sus valores de prioridad. El elemento con la mayor prioridad se elimina primero.
+
+<div><img src="../../../imgs/01 - Lenguaje C/02 - ProgramacionIntermedia/04 - ED/QUE_5.png"></div>
+
+#### Operaciones Básicas en una Cola.
+#### <a href="04 - 05 - Queue/04 - 05 - 01 - Enqueue.c">En cola (Enqueue).</a>
+La operación en cola, permite agregar o almacenar un elemento al final de la cola. Sus pasos son los siguientes:
+
+- Comprueba si la cola está llena. Si es así, devuelve un error de desbordamiento y sale.
+- Si la cola no está llena, incrementa el puntero posterior a la siguiente posición disponible.
+- Inserta el elemento en la parte posterior.
+
+<div><img src="../../../imgs/01 - Lenguaje C/02 - ProgramacionIntermedia/04 - ED/QUE_3.png"></div>
+
+#### <a href="04 - 05 - Queue/04 - 05 - 02 - Dequeue.c">Fuera de cola (Dequeue).</a>
+La operación fuera de cola, permite eliminar un elemento al frente de la cola. Sus pasos son los siguientes:
+
+- Comprueba si la cola está vacía. Si es así, devuelve un error de desbordamiento.
+- Elimina el elemento del frente.
+- Incrementa el puntero del frente al siguiente elemento.
+
+#### <a href="04 - 05 - Queue/04 - 05 - 03 - PeekFront.c">Peek o Front.</a>
+Retorna el elemento que se posiciona en el frontend sin ser removido.
+
+#### <a href="04 - 05 - Queue/04 - 05 - 04 - Size.c">Tamaño.</a>
+Retorna el numero de elementos presentes en la cola.
+
+#### <a href="04 - 05 - Queue/04 - 05 - 05 - isEmpty.c">isEmpty.</a>
+Retorna un valor booleano el cual indica si la cola esta vacía o no.
+
+#### <a href="04 - 05 - Queue/04 - 05 - 06 - isFull.c">isFull.</a>
+Retorna un valor booleano el cual indica si la cola esta llena o no.
+
+<div><img src="../../../imgs/01 - Lenguaje C/02 - ProgramacionIntermedia/04 - ED/QUE_4.png"></div>
+
+#### Aplicaciones de una Cola.
+La aplicación de colas es común. En un sistema informático, puede haber colas de tareas que esperan la impresora, el acceso al almacenamiento en disco o incluso, en un sistema de tiempo compartido, el uso de la CPU. Dentro de un solo programa, puede haber múltiples solicitudes que se deben mantener en una cola, o una tarea puede crear otras tareas, que deben realizarse a su vez manteniéndolas en una cola.
+
+- Una cola siempre se utiliza como un búfer cuando hay un desajuste de velocidad entre un productor y un consumidor. Por ejemplo, el teclado y la CPU.
+- La cola se puede utilizar cuando se tiene un solo recurso y varios consumidores, como una sola CPU y varios procesos.
+- En una red, una cola se utiliza en dispositivos como un enrutador/conmutador y una cola de correo.
+- La cola se puede utilizar en varias técnicas de algoritmos como la búsqueda en amplitud, la ordenación topológica, etc.
+
+#### Implementaciones de las colas.
+
+- <a href="04 - 05 - Queue/04 - 05 - 08 - ICUA/04 - 05 - 07 - ICUA.md"><b><i>Implementación de colas utilizando arreglos.</i></b></a>
+- <a href="04 - 05 - Queue/04 - 05 - 09 - ICULE/04 - 05 - 09 - ICULE.md"><b><i>Implementación de colas utilizando listas enlazadas.</i></b></a>
+
+### <a href="04 - 06 - LinkedList/">Listas Enlazadas.</a>
+Las colas son estructuras de datos que sigues el principio <b><i>FIFO (First-in, First-out)</i></b>, es decir, el primer elemento que entra es el primero que sale.
 
 Regresar al menú de intermedio <a href="../00 - Intermedio.md">Click aquí</a>.
