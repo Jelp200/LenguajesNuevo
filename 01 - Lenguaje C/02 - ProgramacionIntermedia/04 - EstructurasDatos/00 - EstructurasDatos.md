@@ -221,7 +221,7 @@ Las listas enlazadas son un tipo de estructura de dato fundamental. Contienen un
 | Listas Enlazadas                                                                        | Arreglos                                                            |
 |-----------------------------------------------------------------------------------------|---------------------------------------------------------------------|
 | **Estructura de datos:** No contigua                                                    | **Estructura de datos:** Contigua                                   |
-| **Localidad de memoria:** Generalmente<br>se asignan u por uno a elementos individuales | **Localidad de memoria:** Generalmente se<br>asigna todo el arreglo |
+| **Localidad de memoria:** Generalmente<br>se asignan uno por uno a elementos individuales | **Localidad de memoria:** Generalmente se<br>asigna todo el arreglo |
 | **Inserción/Eliminación:** Eficiente                                                    | **Inserción/Eliminación:** Ineficiente                              |
 | **Acceso:** Secuencial                                                                  | **Acceso:** Aleatorio                                               |
 
