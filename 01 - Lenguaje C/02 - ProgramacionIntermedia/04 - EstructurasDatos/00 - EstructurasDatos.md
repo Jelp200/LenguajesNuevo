@@ -216,6 +216,21 @@ La aplicación de colas es común. En un sistema informático, puede haber colas
 - <a href="04 - 05 - Queue/04 - 05 - 09 - ICULE/04 - 05 - 09 - ICULE.md"><b><i>Implementación de colas utilizando listas enlazadas.</i></b></a>
 
 ### <a href="04 - 06 - LinkedList/">Listas Enlazadas.</a>
-Las colas son estructuras de datos que sigues el principio <b><i>FIFO (First-in, First-out)</i></b>, es decir, el primer elemento que entra es el primero que sale.
+Las listas enlazadas son un tipo de estructura de dato fundamental. Contienen una eficiente inserción y eliminación a comparación de los arreglos. Tal y como los arreglos, estas tambien son utilizadas para implementar otras estructuras de datos como pilas y colas. A continuación la siguiente tabla muestra las diferencias entre las listas enlazadas y los arreglos.
+
+| Listas Enlazadas                                                                        | Arreglos                                                            |
+|-----------------------------------------------------------------------------------------|---------------------------------------------------------------------|
+| **Estructura de datos:** No contigua                                                    | **Estructura de datos:** Contigua                                   |
+| **Localidad de memoria:** Generalmente<br>se asignan u por uno a elementos individuales | **Localidad de memoria:** Generalmente se<br>asigna todo el arreglo |
+| **Inserción/Eliminación:** Eficiente                                                    | **Inserción/Eliminación:** Ineficiente                              |
+| **Acceso:** Secuencial                                                                  | **Acceso:** Aleatorio                                               |
+
+Las listas enlazadas pueden clasificarse en:
+
+- <b><i>Lista Enlazada Simple (LES).</i></b>
+- <b><i>Doble Lista Enlazada (DLE).</i></b>
+- <b><i>Lista Enlazada Circular (LEC).</i></b>
+- <b><i>Aplicaciones y ventajas de las listas enlazadas.</i></b>
+
 
 Regresar al menú de intermedio <a href="../00 - Intermedio.md">Click aquí</a>.
