@@ -227,7 +227,7 @@ Las listas enlazadas son un tipo de estructura de dato fundamental. Contienen un
 
 Las listas enlazadas pueden clasificarse en:
 
-- <b><i>Lista Enlazada Simple (LES).</i></b>
+- <a href="04 - 06 - LinkedList/04 - 06 - 01 - SimpleLinkedList/04 - 06 - 01 - SLL.md"><b><i>Lista Enlazada Simple (LES).</i></b></a>
 - <b><i>Doble Lista Enlazada (DLE).</i></b>
 - <b><i>Lista Enlazada Circular (LEC).</i></b>
 - <b><i>Aplicaciones y ventajas de las listas enlazadas.</i></b>
