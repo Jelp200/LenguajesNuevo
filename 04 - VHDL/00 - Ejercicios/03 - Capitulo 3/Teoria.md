@@ -21,6 +21,6 @@
 ## 4.- EXPRESIÓN EQUIVALENTE EN VHDL
 
 $$
-X = (a + b) \cdot (c \oplus d) = (a or b) and (c xor d)
+X = (a + b) \cdot (c \oplus d) = (a OR b) AND (c XOR d)
 $$
 
