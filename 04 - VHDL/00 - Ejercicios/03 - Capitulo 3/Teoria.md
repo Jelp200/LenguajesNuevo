@@ -252,7 +252,7 @@ entity demux_1a4 is
         Datos, En : in std_logic;
         Sel : in std_logic_vector(1 downto 0);
         --* SALIDAS
-        Y : out std_logic_vector(3 downto 0);
+        Y : out std_logic_vector(3 downto 0)
     );
 end demux_1a4;
 
