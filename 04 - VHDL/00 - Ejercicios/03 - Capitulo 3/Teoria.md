@@ -22,5 +22,5 @@
 
 $$
 X = (a + b) \cdot (c \oplus d) = (a OR b) AND (c XOR d)
+F = (a + c + d) + (a \cdot \overline{c} \cdot \overline{d}) \cdot (a + b)
 $$
-
