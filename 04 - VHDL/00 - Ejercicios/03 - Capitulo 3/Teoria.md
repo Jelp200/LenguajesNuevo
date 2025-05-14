@@ -27,5 +27,5 @@ $$
 F = (a + c + d) + (a \cdot \overline{c} \cdot \overline{d}) \cdot (a + b) = (a \quad OR \quad c \quad OR \quad d) \quad OR \quad (c \quad AND \quad NOT \quad d \quad AND \quad NOT \quad c) \quad AND \quad (a \quad OR \quad b)
 $$
 $$
-Z = (x \cdot w \gg y) + (\overline{x} \overline{\oplus} \overline{y}) =
+Z = (x \cdot w \gg y) + (\overline{x} \overline{\oplus} \overline{y}) = (x \quad AND w \quad AND \quad y) \quad OR \quad (X \quad XNOR \quad y)
 $$
