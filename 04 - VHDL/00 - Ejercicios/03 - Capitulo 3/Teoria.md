@@ -21,11 +21,11 @@
 ## 4.- EXPRESIÓN EQUIVALENTE EN VHDL
 
 $$
-X = (a + b) \cdot (c \oplus d) = (a\OR\b)\AND\(c\XOR\d)
+X = (a + b) \cdot (c \oplus d) = (a\quad OR \quad b)\quad AND \quad(c\quad XOR \quad d)
 $$
 $$
 F = (a + c + d) + (a \cdot \overline{c} \cdot \overline{d}) \cdot (a + b) = (a\OR\c\OR\d)\OR\(c\AND\NOT\d\AND\NOT\c)\AND\(a\OR\b)
 $$
 $$
-Z = (x \cdot w \gg y) + (\overline{x} \overline{\oplus} \overline{y}) =
+Z = (x \cdot w \gg y) + (\overline{x \oplus y} \overline{\oplus} \overline{y}) =
 $$
