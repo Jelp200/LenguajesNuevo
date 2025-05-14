@@ -82,7 +82,3 @@ end seleccion;
 ```
 
 El nombre de la entidad es `seleccion`, mientras que el puerto de entrada es `x` (bus de 4b) y el puerto de salida es `f`, por último, los tipos de datos que tienen estos puestos son `std_logic_vector` y `std_logic` respectivamente.
-
-## 5.- PRINCIPAL DIFERENCIA ENTRE LAS DECLARACIONES SECUENCIALES Y LAS DECLARACIONES CONCURRENTES
-
-Las declaraciones secuenciales como su nombre lo dice, se ejecutan en secuencia (una detrás de otra) dentro de un proceso o subprograma, mientras que las declaraciones concurrentes se ejecutan en paralelo, simulando así el comportamiento del hardware.
