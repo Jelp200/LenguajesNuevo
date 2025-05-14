@@ -56,14 +56,13 @@ Las declaraciones secuenciales como su nombre lo dice, se ejecutan en secuencia 
 
 ## 10.- UN CIRCUITO COMPARADOR DE 3 BITS RECIBE DOS NÚMEROS DE 3 BITS X —> X2, XI, XO & Z —> Z2, ZI, ZO. DISEÑE UN PROGRAMA EN VHDL QUE PRODUZCA UNA SALIDA F = 1 SI Y SÓLO SI X < Z
 
-<div>
-  <img src="../../../imgs/04 - VHDL/10.png"/>
-</div>
+![Comparador de 3 bits](../../../imgs/04 - VHDL/10.png)
 
 ```vhd
 -- Seccion de librerias
 library IEEE;
 use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
 
 -- Declaración de la entidad
 entity comparador_3b is
@@ -73,7 +72,7 @@ entity comparador_3b is
         --* SALIDAS
         F : out std_logic
     );
-end comprador_3b;
+end comparador_3b;
 
 -- Arquitectura
 architecture funcional of comparador_3b is
