@@ -20,4 +20,7 @@
 
 ## 4.- EXPRESIÓN EQUIVALENTE EN VHDL
 
+$$
 X = (a + b) \cdot (c \oplus d)
+$$
+
