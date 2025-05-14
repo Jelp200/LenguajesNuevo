@@ -35,7 +35,7 @@ entity semaforo is
         Clk, Rst, Sensor : in std_logic;
         --* SALIDAS
         NS_rojo, NS_ambar, NS_verde : out std_logic;
-        EO_rojo, EO_ambar, EO_verde : out std_logic;
+        EO_rojo, EO_ambar, EO_verde : out std_logic
     );
 end entity semaforo;
 
